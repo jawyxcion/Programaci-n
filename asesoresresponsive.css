@@ -1,0 +1,75 @@
+/* Estilos para tabletas (pantallas entre 768px y 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .advisors-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+        padding: 20px; /* Reducir padding */
+    }
+
+    .advisor-photo {
+        width: 150px; /* Reducir tamaño de la foto */
+        height: 150px;
+    }
+
+    .bouncing-logo {
+        width: 150px; /* Reducir tamaño del logo */
+    }
+}
+
+/* Estilos para celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .advisors-section {
+        padding-top: 40px; /* Reducir espacio desde el navbar */
+    }
+
+    .advisors-container {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        padding: 20px; /* Reducir padding */
+    }
+
+    .advisor-card {
+        padding: 10px; /* Reducir padding de las tarjetas */
+    }
+
+    .advisor-photo {
+        width: 120px; /* Reducir más el tamaño de la foto */
+        height: 120px;
+    }
+
+    .advisor-name {
+        font-size: 1rem; /* Reducir tamaño de fuente */
+    }
+
+    .advisor-department {
+        font-size: 0.9rem; /* Reducir tamaño de fuente */
+    }
+
+    .bouncing-logo {
+        width: 120px; /* Reducir tamaño del logo */
+    }
+
+    .back-button {
+        font-size: 0.9rem; /* Reducir tamaño de fuente */
+        padding: 8px 16px; /* Reducir padding del botón */
+    }
+
+    .footer {
+        padding: 50px; /* Reducir padding del footer */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Cambiar footer a una columna */
+        align-items: center; /* Centrar el contenido */
+    }
+
+    .footer-logo,
+    .footer-contact,
+    .footer-links,
+    .footer-social,
+    .footer-feedback {
+        margin-bottom: 20px; /* Agregar espacio entre secciones */
+    }
+
+    .footer-social ul {
+        justify-content: center; /* Centrar los íconos de redes sociales */
+}
+}

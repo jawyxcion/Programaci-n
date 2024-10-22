@@ -1,0 +1,184 @@
+/* Estilos generales para el navbar */
+.navbar {
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+/* Estilos para el menú */
+.navbar-items {
+    display: flex; /* Muestra el menú por defecto */
+}
+
+.navbar-items.hide {
+    display: none; /* Oculta el menú */
+}
+
+/* Estilos responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-items {
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Asegúrate de que este valor coincide con la altura del navbar */
+        right: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Oculta el menú por defecto */
+    }
+
+    .navbar-items.show {
+        display: flex; /* Muestra el menú cuando tiene la clase "show" */
+    }
+
+    .menu-icon {
+        display: flex; /* Muestra el icono de menú */
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar-item {
+        padding: 10px 15px;
+        text-align: right;
+}
+}
+
+/* Estilos para tabletas (pantallas entre 768px y 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .faq-container {
+        max-width: 600px; /* Reducir ancho máximo */
+        padding: 0 15px; /* Ajustar padding */
+    }
+
+    .faq {
+        padding: 20px; /* Reducir padding de las FAQs */
+        margin: 30px 0; /* Reducir margen */
+    }
+
+    .faq-toggle {
+        top: 20px; /* Ajustar posición del botón toggle */
+        right: 20px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .titulo {
+        padding: 60px; /* Reducir padding en la sección del título */
+    }
+}
+
+/* Estilos para celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    h1 {
+        margin: 40px 0 20px; /* Reducir márgenes del título */
+        font-size: 1.5rem; /* Ajustar tamaño de la fuente */
+    }
+
+    .faq-container {
+        max-width: 100%; /* Usar el ancho completo en móviles */
+        padding: 0 20px; /* Aumentar el padding lateral */
+    }
+
+    .faq {
+        padding: 15px; /* Reducir más el padding de las FAQs */
+        margin: 20px 0; /* Reducir el margen */
+    }
+
+    .faq-title {
+        margin-right: 45px; /* Reducir margen de título FAQ */
+    }
+
+    .faq-toggle {
+        top: 15px; /* Ajustar posición del botón toggle */
+        right: 15px;
+        height: 18px; /* Reducir tamaño del botón toggle */
+        width: 18px;
+    }
+
+    .titulo {
+        padding: 40px; /* Reducir padding en la sección del título */
+}
+}
+
+
+/* Footer responsive */
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-logo,
+    .footer-contact,
+    .footer-links,
+    .footer-social,
+    .footer-feedback {
+        margin: 20px 0;
+    }
+    .footer-logo img,
+    .footer-social img,
+    .contact-item img {
+        width: 120px; /* ajusta según necesites */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo img {
+        width: 100px;
+    }
+    .footer-content {
+        padding: 20px;
+    }
+    .footer-feedback input, .footer-feedback textarea {
+        width: 100%;
+    }
+    .footer-feedback button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 50px 20px;
+    }
+    .footer-content {
+        padding: 0;
+    }
+    .footer-logo img,
+    .footer-social img,
+    .contact-item img {
+        width: 80px;
+    }
+    .footer-feedback input, .footer-feedback textarea {
+        padding: 10px;
+}
+}

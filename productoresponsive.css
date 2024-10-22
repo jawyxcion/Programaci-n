@@ -1,0 +1,72 @@
+/* Estilos responsivos para pantallas de móviles y tabletas */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 10px 20px; /* Reduce el espaciado interno de la barra de navegación */
+        gap: 20px; /* Reduce el espacio entre los elementos */
+        max-width: 100%; /* Ocupa todo el ancho de la pantalla */
+        flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas */
+    }
+
+    .logo {
+        width: 80px; /* Reduce el tamaño del logo */
+    }
+
+    .login-icon {
+        width: 20px; /* Reduce el tamaño del ícono de inicio de sesión */
+    }
+
+    .hero {
+        height: 60vh; /* Reduce la altura de la sección hero */
+    }
+
+    .how-it-works h2 {
+        font-size: 28px; /* Reduce el tamaño del título */
+    }
+
+    .how-it-works p {
+        font-size: 16px; /* Reduce el tamaño del texto */
+    }
+
+    .steps {
+        flex-direction: column; /* Cambia la disposición a columna */
+        gap: 10px; /* Reduce el espacio entre los pasos */
+    }
+
+    .step {
+        width: 100%; /* Hace que cada paso ocupe todo el ancho */
+        padding: 15px; /* Reduce el relleno */
+    }
+
+    .step img {
+        max-width: 80px; /* Reduce el tamaño de las imágenes de los pasos */
+    }
+
+    button {
+        font-size: 1em; /* Reduce el tamaño del texto del botón */
+        padding: 5px 10px; /* Ajusta el relleno del botón */
+    }
+
+    /* Ajustes de footer */
+    .footer {
+        padding: 50px; /* Reduce el padding del footer */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Apila los elementos del footer en una columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .footer-logo img {
+        width: 120px; /* Reduce el tamaño del logo */
+    }
+
+    .footer-contact, .footer-links, .footer-social, .footer-feedback {
+        margin: 20px 0; /* Ajusta el margen de cada sección */
+        text-align: center; /* Centra el texto */
+    }
+
+    .footer-social ul {
+        justify-content: center; /* Centra los íconos de redes sociales */
+}
+}

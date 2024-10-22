@@ -1,0 +1,338 @@
+body {
+    font-family: Arial, sans-serif; /* Establece la fuente de todo el cuerpo del documento */
+    margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}
+
+.navbar {
+    background-color: transparent; /* Color de fondo inicial de la barra de navegación */
+    border-radius: 50px; /* Bordes redondeados de la barra de navegación */
+    padding: 15px 40px; /* Espaciado interno de la barra de navegación */
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.2); /* Sombra de la barra de navegación */
+    display: flex; /* Establece un contenedor flexible para alinear elementos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    gap: 70px; /* Espacio entre los elementos de la barra de navegación */
+    max-width: 1100px; /* Ancho máximo de la barra de navegación */
+    margin: 0 auto; /* Centra la barra de navegación horizontalmente */
+    position: fixed; /* Fija la barra de navegación en la parte superior */
+    top: 0; /* Posición en la parte superior */
+    left: 50%; /* Posición en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta la posición horizontalmente */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+    transition: background-color 0.5s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+.navbar-item {
+    color: black; /* Color del texto de los elementos de la barra de navegación */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    padding: 10px 15px; /* Espaciado interno de los elementos de la barra de navegación */
+    transition: all 0.3s ease; /* Transición suave para cambios de estilo */
+    border-radius: 30px; /* Bordes redondeados de los elementos de la barra */
+}
+
+.navbar-item:hover, .navbar-item.active {
+    background-color: red; /* Color de fondo al pasar el ratón o si está activo */
+    color: white; /* Color del texto al pasar el ratón o si está activo */
+    transform: scale(1.1); /* Aumenta el tamaño ligeramente al pasar el ratón */
+}
+
+.logo {
+    width: 120px; /* Ancho del logo */
+    height: auto; /* Altura automática para mantener la proporción */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el logo */
+}
+
+.login-icon {
+    width: 30px; /* Ancho del icono de inicio de sesión */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+body.scrolled .navbar {
+    background-color: white; /* Cambia el color de fondo al desplazarse */
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1); /* Sombra más tenue al desplazarse */
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* La sección ocupa toda la ventana */
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Que el video cubra toda la sección sin deformarse */
+    z-index: -1; /* Video detrás del navbar */
+}
+
+.header {
+    background-image: url(fondo\ prueba\ \ \(1\).png);
+    background-size: cover;
+    background-position: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    padding: 150px 0;
+}
+.header h1 {
+    margin: 0;
+}
+
+.header {
+    background-image: url(rojo.PNG);
+    background-size: cover;
+    background-position: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    padding: 150px 0;
+}
+.header h1 {
+    margin: 0;
+}
+.how-it-works {
+    background-color: #f4f4f9;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+
+.how-it-works h2 {
+    font-size: 38px;
+    color: #fd0404;
+    margin-bottom: 10px;
+}
+.how-it-works p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+}
+.how-it-works img{
+    max-width: 9%;
+    margin-top: 55px;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.step {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: left;
+    margin-bottom: 30px;
+    
+}
+
+
+.step img {
+    max-width: 50%;
+    margin-top: 50px;
+}
+
+.step-number {
+    font-size: 36px;
+    color: #810000;
+    margin-right: 10px;
+}
+
+.step h3 {
+    font-size: 20px;
+    color: #ff0404;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease; /* Animación de entrada */
+}
+button {
+    padding: 5px 5px;
+    background-color: #e12b2b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.44em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    animation: slideDown 0.5s ease; /* Animación de deslizamiento */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-content h2 {
+    font-size: 1cm;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.modal-content p {
+    font-size: 0.5cm;
+    color: #000000;
+}
+
+/* Botón para cerrar el modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.50em;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #e12b2b;
+}
+
+/*footer*/
+.footer { 
+    background-color: #8c7c7c; /* Define el color de fondo del footer. */
+    padding: 100px; /* Aplica un relleno de 100 píxeles alrededor del contenido del footer. */
+}
+.footer-content { 
+    display: flex; /* Usa flexbox para organizar los elementos dentro del footer. */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos. */
+    align-items: flex-start; /* Alinea los elementos al inicio (parte superior) del contenedor. */
+}
+.footer-logo { 
+    flex: 1; /* Hace que el contenedor del logo ocupe una parte igual del espacio disponible. */
+    margin-right: 20px; /* Aplica un margen derecho de 20 píxeles. */
+}
+.footer-logo img { 
+    width: 170px; /* Establece el ancho de la imagen del logo a 170 píxeles. */
+    animation: move-left-right 3s ease-in-out infinite; /* Aplica una animación de movimiento continuo de izquierda a derecha. */
+}
+
+/* Definición de la animación */
+@keyframes move-left-right { 
+    0% { 
+        transform: translateX(0); /* Posición inicial del logo (sin movimiento). */
+    }
+    50% { 
+        transform: translateX(20px); /* Mueve el logo 20 píxeles a la derecha. */
+    }
+    100% { 
+        transform: translateX(0); /* Regresa el logo a su posición original. */
+    }
+}
+.footer-contact { 
+    flex: 1; /* Hace que el contenedor de contacto ocupe una parte igual del espacio disponible. */
+}
+.contact-item { 
+    display: flex; /* Usa flexbox para alinear los elementos de contacto. */
+    align-items: center; /* Alinea verticalmente los íconos y texto en el centro. */
+    margin-bottom: 15px; /* Aplica un margen inferior de 15 píxeles entre los elementos de contacto. */
+}
+.contact-item img { 
+    width: 50px; /* Establece el ancho de los íconos a 50 píxeles. */
+    margin-right: 10px; /* Aplica un margen derecho de 10 píxeles entre el ícono y el texto. */
+}
+.footer-links, .footer-social, .footer-feedback { 
+    flex: 1; /* Hace que cada sección (enlaces, redes sociales y feedback) ocupe una parte igual del espacio disponible. */
+    margin-left: 20px; /* Aplica un margen izquierdo de 20 píxeles a estas secciones. */
+}
+.footer-links h3, .footer-social h3, .footer-feedback h3 { 
+    margin-bottom: 10px; /* Aplica un margen inferior de 10 píxeles a los títulos (h3) de cada sección. */
+}
+.footer-links ul, .footer-social ul { 
+    list-style: none; /* Elimina el estilo de lista (sin viñetas) para las listas dentro de las secciones de enlaces y redes sociales. */
+    padding: 0; /* Elimina el relleno predeterminado de las listas. */
+}
+.footer-links li, .footer-social li { 
+    margin-bottom: 25px; /* Aplica un margen inferior de 25 píxeles entre los elementos de las listas. */
+}
+.footer-links a, .footer-social a { 
+    text-decoration: underline; /* Subraya los enlaces. */
+    color: rgb(0, 0, 0); /* Define el color de los enlaces como negro. */
+}
+.footer-social ul { 
+    display: flex; /* Usa flexbox para organizar los íconos de redes sociales en línea. */
+}
+.footer-social li { 
+    margin-right: 10px; /* Aplica un margen derecho de 10 píxeles entre los íconos de redes sociales. */
+}
+.footer-social img { 
+    width: 50px; /* Establece el ancho de los íconos de redes sociales a 50 píxeles. */
+}
+.footer-feedback form { 
+    display: flex; /* Usa flexbox para organizar los campos del formulario en una columna. */
+    flex-direction: column; /* Coloca los campos del formulario en una columna (uno debajo del otro). */
+}
+.footer-feedback input, .footer-feedback textarea { 
+    margin-bottom: 15px; /* Aplica un margen inferior de 15 píxeles entre los campos del formulario. */
+    padding: 15px; /* Aplica un relleno interno de 15 píxeles en los campos del formulario. */
+    border: #999 solid 1px; /* Establece un borde gris (#999) sólido de 1 píxel para los campos del formulario. */
+    border-radius: 4px; /* Aplica bordes redondeados con un radio de 4 píxeles. */
+}
+.footer-feedback button { 
+    padding: 10px; /* Aplica un relleno interno de 10 píxeles al botón de envío. */
+    background-color: #444; /* Define el color de fondo del botón como gris oscuro (#444). */
+    color: white; /* Establece el color del texto del botón en blanco. */
+    border: none; /* Elimina los bordes del botón. */
+    border-radius: 4px; /* Aplica bordes redondeados con un radio de 4 píxeles al botón. */
+    cursor: pointer; /* Cambia el cursor a puntero cuando se pasa sobre el botón. */
+}
+.footer-feedback button:hover { 
+    background-color: #ae2727; /* Cambia el color de fondo del botón a rojo oscuro (#ae2727) cuando se pasa el cursor por encima. */
+}

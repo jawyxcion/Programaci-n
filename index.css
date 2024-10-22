@@ -1,0 +1,767 @@
+body {
+    font-family: Arial, sans-serif; /* Establece la fuente de todo el cuerpo del documento */
+    margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}
+
+.navbar {
+    background-color: transparent; /* Color de fondo inicial de la barra de navegación */
+    border-radius: 50px; /* Bordes redondeados de la barra de navegación */
+    padding: 15px 40px; /* Espaciado interno de la barra de navegación */
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.2); /* Sombra de la barra de navegación */
+    display: flex; /* Establece un contenedor flexible para alinear elementos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    gap: 70px; /* Espacio entre los elementos de la barra de navegación */
+    max-width: 1100px; /* Ancho máximo de la barra de navegación */
+    margin: 0 auto; /* Centra la barra de navegación horizontalmente */
+    position: fixed; /* Fija la barra de navegación en la parte superior */
+    top: 0; /* Posición en la parte superior */
+    left: 50%; /* Posición en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta la posición horizontalmente */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+    transition: background-color 0.5s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+.navbar-item {
+    color: black; /* Color del texto de los elementos de la barra de navegación */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    padding: 10px 15px; /* Espaciado interno de los elementos de la barra de navegación */
+    transition: all 0.3s ease; /* Transición suave para cambios de estilo */
+    border-radius: 30px; /* Bordes redondeados de los elementos de la barra */
+}
+
+.navbar-item:hover, .navbar-item.active {
+    background-color: red; /* Color de fondo al pasar el ratón o si está activo */
+    color: white; /* Color del texto al pasar el ratón o si está activo */
+    transform: scale(1.1); /* Aumenta el tamaño ligeramente al pasar el ratón */
+}
+
+.logo {
+    width: 120px; /* Ancho del logo */
+    height: auto; /* Altura automática para mantener la proporción */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el logo */
+}
+
+.login-icon {
+    width: 30px; /* Ancho del icono de inicio de sesión */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+body.scrolled .navbar {
+    background-color: white; /* Cambia el color de fondo al desplazarse */
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1); /* Sombra más tenue al desplazarse */
+}
+
+/* VIDEO INICIO */
+.hero {
+    position: relative; /* Posición relativa para los elementos hijos */
+    width: 100%; /* Ancho completo del contenedor */
+    height: 100vh; /* Altura completa de la ventana del navegador */
+    overflow: hidden; /* Oculta cualquier contenido desbordante */
+    margin-top: 0; /* Sin margen superior */
+}
+
+.hero video {
+    position: absolute; /* Posición absoluta para el video */
+    top: 0; /* Alinea el video a la parte superior */
+    left: 0; /* Alinea el video a la izquierda */
+    width: 100%; /* Ancho completo del video */
+    height: 100%; /* Altura completa del video */
+    object-fit: cover; /* Cubre el contenedor manteniendo la proporción */
+    z-index: -1; /* Coloca el video detrás de otros elementos */
+}
+
+/* BOTON FLOTANTE */
+.whatsapp-button {
+    position: fixed; /* Fija el botón en la pantalla */
+    bottom: 20px; /* Posición desde la parte inferior */
+    right: 20px; /* Posición desde la derecha */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    border-radius: 80%; /* Bordes completamente redondeados */
+    display: flex; /* Utiliza un contenedor flexible para centrar el icono */
+    justify-content: center; /* Centra el icono horizontalmente */
+    align-items: center; /* Centra el icono verticalmente */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformaciones y sombras */
+}
+
+/* Estilo del icono de WhatsApp */
+.whatsapp-button img {
+    width: 100%; /* Ancho completo de la imagen */
+    height: 100%; /* Altura completa de la imagen */
+}
+
+/* Nubecita de texto flotante */
+.whatsapp-button::after {
+    content: 'Contáctanos'; /* Texto de la nubecita */
+    position: absolute; /* Posición absoluta para la nubecita */
+    top: 50%; /* Alinea verticalmente al centro */
+    left: -120px; /* Posición a la izquierda del botón */
+    transform: translateY(-50%); /* Centra verticalmente */
+    background-color: #fff; /* Color de fondo de la nubecita */
+    color: #333; /* Color del texto de la nubecita */
+    padding: 10px 15px; /* Espaciado interno de la nubecita */
+    border-radius: 20px; /* Bordes redondeados de la nubecita */
+    font-size: 14px; /* Tamaño de fuente del texto */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra de la nubecita */
+    opacity: 0; /* Comienza oculto */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave para la opacidad y transformaciones */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+/* Mostrar la nubecita cuando el botón es hover */
+.whatsapp-button:hover::after {
+    opacity: 1; /* Muestra la nubecita al pasar el ratón */
+    transform: translateY(-50%) translateX(-10px); /* Le da un pequeño movimiento cuando aparece */
+}
+
+/* Animación para que la nubecita también flote suavemente */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(-50%) translateX(-10px); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-45%) translateX(-10px); /* Mueve un poco la nubecita hacia arriba */
+    }
+}
+
+/* Aplicar la animación al pseudo-elemento */
+.whatsapp-button::after {
+    animation: floating 3s ease-in-out infinite; /* Aplica la animación de flotación de manera infinita */
+}
+
+/* BOTONES DE INICIO */
+.cta-buttons {
+    display: flex; /* Utiliza un contenedor flexible para alinear botones */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    margin: 40px 0; /* Margen vertical de 40px */
+    padding: 40px 20px; /* Espaciado interno de los botones */
+    flex-wrap: wrap; /* Permite que los botones se ajusten a varias líneas */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 25px; /* Espacio entre los botones */
+}
+
+.cta-button {
+    width: 50%; /* Ancho del botón */
+    max-width: 300px; /* Ancho máximo del botón */
+    max-height: 150px; /* Altura máxima del botón */
+    padding: 20px; /* Espaciado interno del botón */
+    border: #ddd solid 2px; /* Bordes del botón */
+    border-radius: 45px; /* Bordes redondeados del botón */
+    box-shadow: 0 6px 6px rgb(0, 0, 0, 0.1); /* Sombra del botón */
+    text-align: center; /* Centra el texto dentro del botón */
+    margin-bottom: 50px; /* Margen inferior del botón */
+    background-color: #f9f9f9; /* Color de fondo del botón */
+}
+
+.cta-button a {
+    display: flex; /* Utiliza un contenedor flexible para alinear elementos dentro del botón */
+    flex-direction: column; /* Organiza elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    height: 100%; /* Altura completa del enlace */
+    width: 100%; /* Ancho completo del enlace */
+}
+
+.cta-button:hover {
+    transform: translateY(-5px); /* Mueve el botón hacia arriba al pasar el ratón */
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    transform: translateY(-5px) rotate(2deg); /* Agrega un pequeño giro al botón al pasar el ratón */
+    background-color: #eadcdc; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.cta-button img {
+    width: 60px; /* Ancho de la imagen dentro del botón */
+    height: 50px; /* Altura de la imagen dentro del botón */
+    margin-bottom: 10px; /* Margen inferior de la imagen */
+}
+
+.cta-button p {
+    color: #333; /* Color del texto dentro del botón */
+    font-size: 1.1em; /* Tamaño de fuente del texto */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente del texto */
+}
+
+/* SECCIÓN INICIO */
+.intro a {
+    display: inline-block; /* Hace que el enlace se comporte como un bloque en línea */
+    padding: 15px 30px; /* Espaciado interno del enlace */
+    border-radius: 50px; /* Bordes redondeados del enlace */
+    background-color: #e12b2b; /* Color de fondo del enlace */
+    color: white; /* Color del texto del enlace */
+    font-size: 1.2em; /* Tamaño de fuente del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente del texto del enlace */
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1); /* Sombra del enlace */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave para cambios de fondo y transformaciones */
+    animation: jump 5s infinite; /* Animación que hace que el enlace salte */
+}
+
+.intro a:hover {
+    background-color: #c12727; /* Cambia el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+.jump-button {
+    display: inline-block; /* Hace que el botón se comporte como un bloque en línea */
+    padding: 15px 30px; /* Espaciado interno del botón */
+    border-radius: 50px; /* Bordes redondeados del botón */
+    background-color: #e12b2b; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    font-size: 1.2em; /* Tamaño de fuente del texto del botón */
+    text-decoration: none; /* Elimina el subrayado del botón */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente del texto del botón */
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1); /* Sombra del botón */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave para cambios de fondo y transformaciones */
+    animation: jump 2s infinite; /* Animación que hace que el botón salte */
+}
+
+.jump-button:hover {
+    background-color: #af5050; /* Cambia el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0); /* Sin movimiento al inicio y fin de la animación */
+    }
+    50% {
+        transform: translateY(-10px); /* Mueve el botón hacia arriba en la mitad de la animación */
+    }
+}
+
+/* TIENDAS ONLINE Y CUADRO A LA PAR */
+.container {
+    display: flex; /* Utiliza un contenedor flexible para alinear elementos */
+    justify-content: center; /* Centra el contenido dentro del contenedor */
+    padding: 20px; /* Espaciado interno del contenedor */
+}
+
+.card {
+    background-color: white; /* Color de fondo de la tarjeta */
+    border-radius: 10px; /* Bordes redondeados de la tarjeta */
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+    padding: 20px; /* Espaciado interno de la tarjeta */
+    margin: 20px; /* Margen externo de la tarjeta */
+    width: 400px; /* Ancho de la tarjeta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformaciones y sombras */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Mueve la tarjeta hacia arriba al pasar el ratón */
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    transform: translateY(-5px) rotate(2deg); /* Agrega un pequeño giro a la tarjeta al pasar el ratón */
+    background-color: #eadcdc; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.card h3 {
+    color: #ff5722; /* Color del título de la tarjeta */
+    margin-bottom: 20px; /* Margen inferior del título */
+}
+
+.card p {
+    font-size: 20px; /* Tamaño de fuente del texto dentro de la tarjeta */
+    margin-bottom: 10px; /* Margen inferior del texto */
+    color: #333; /* Color del texto dentro de la tarjeta */
+}
+
+.card a {
+    display: inline-block; /* Hace que el enlace se comporte como un bloque en línea */
+    border: #d6220b solid 2px; /* Bordes del enlace */
+    background-color: #ffffff; /* Color de fondo del enlace */
+    color: #d6220b; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados del enlace */
+    padding: 10px 20px; /* Espaciado interno del enlace */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para cambios de fondo y color */
+}
+
+.card a:hover {
+    background-color: #d6220b; /* Cambia el color de fondo al pasar el ratón */
+    color: aliceblue; /* Cambia el color del texto al pasar el ratón */
+    transform: translateY(-5px) rotate(2deg); /* Mueve el enlace hacia arriba y agrega un giro al pasar el ratón */
+    background-color: #d30404; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.video-container {
+    flex: 0 0 1200px; /* Flexbox para la contenedor de video */
+    margin-right: 2px; /* Margen derecho del contenedor de video */
+}
+
+video {
+    width: 100%; /* Ancho completo del video */
+    border-radius: 8px; /* Bordes redondeados del video */
+}
+
+.store-logos {
+    display: flex; /* Utiliza un contenedor flexible para los logotipos de las tiendas */
+    flex-wrap: wrap; /* Permite que los logotipos se ajusten a varias líneas */
+    gap: 20px; /* Espacio entre los logotipos */
+    max-height: 400px; /* Altura máxima del contenedor de logotipos */
+    overflow-y: auto; /* Permite el desplazamiento vertical si se excede la altura */
+    padding: 20px; /* Espaciado interno del contenedor de logotipos */
+    background-color: white; /* Color de fondo del contenedor de logotipos */
+    border-radius: 10px; /* Bordes redondeados del contenedor de logotipos */
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.1); /* Sombra del contenedor de logotipos */
+    max-width: 1200px; /* Ancho máximo del contenedor de logotipos */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.store-logos .logo {
+    flex: 0 1 calc(25% - 20px); /* Flexbox para el logotipo, ocupando el 25% del espacio */
+    display: flex; /* Utiliza un contenedor flexible para alinear el logotipo */
+    align-items: center; /* Alinea el logotipo verticalmente al centro */
+    justify-content: center; /* Centra el logotipo horizontalmente */
+}
+
+.store-logos .logo img {
+    margin-top: 10px; /* Margen superior de la imagen del logotipo */
+    max-width: 80%; /* Ancho máximo de la imagen del logotipo */
+    max-height: 80px; /* Altura máxima de la imagen del logotipo */
+    transition: transform 0.3s; /* Transición suave para cambios de transformación */
+}
+
+.store-logos .logo img:hover {
+    transform : scale(1.7);/*Agrandación de logo al pasar el mouse*/
+}
+
+
+/*css de como funciona*/
+
+/* Contenedor principal para los pasos, centra los pasos y les da un max-width */
+.steps-container {
+    display : flex; /* Utiliza flexbox para alinear elementos horizontalmente */
+    justify-content : center; /* Centra los elementos dentro del contenedor */
+    flex-wrap : wrap; /* Permite que los elementos se envuelvan a la siguiente línea si es necesario */
+    padding : 40px 0; /* Espaciado interno en la parte superior e inferior */
+    margin : 0 auto; /* Centra el contenedor horizontalmente */
+    max-width : 1200px; /* Ancho máximo del contenedor */
+}
+
+/* Contenedor de los pasos, organiza los pasos en filas */
+.steps {
+    display : flex; /* Utiliza flexbox para alinear los pasos horizontalmente */
+    flex-wrap : wrap; /* Permite que los pasos se envuelvan a la siguiente línea */
+    justify-content : center; /* Centra los pasos dentro del contenedor */
+    gap : 20px; /* Espacio entre los pasos */
+    padding : 0 120px; /* Espaciado interno en los lados */
+}
+
+/* Estilo de cada paso individual */
+.step {
+    background-color : white; /* Color de fondo blanco para cada paso */
+    border-radius : 10px; /* Bordes redondeados */
+    box-shadow : 0 4px 15px rgb(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    padding : 20px; /* Espaciado interno */
+    margin-bottom : 20px; /* Margen inferior para separar pasos */
+    width : calc(40.33% - 40px); /* Ancho del paso calculado con margen incluido */
+    transition : transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para transformaciones y sombras */
+    text-align : center; /* Centra el texto dentro del paso */
+}
+
+/* Estilo al pasar el ratón sobre un paso */
+.step:hover {
+    transform : translateY(-5px) rotate(2deg); /* Mueve el paso hacia arriba y rota ligeramente */
+    box-shadow : 0 8px 20px rgb(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    background-color : #eadcdc; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Margen superior de la imagen dentro del paso */
+.step img {
+    margin-top : 5px; /* Espaciado en la parte superior de la imagen */
+}
+
+/* Estilo del número del paso */
+.step-number {
+    font-size : 36px; /* Tamaño de fuente grande para el número */
+    color : #ff0606; /* Color del número en rojo */
+    margin-right : 10px; /* Margen a la derecha del número */
+}
+
+/* Estilo del título del paso */
+.step h3 {
+    font-size : 20px; /* Tamaño de fuente del título */
+    color : #000000; /* Color del texto negro */
+    margin-bottom : 10px; /* Margen inferior para separar del texto siguiente */
+}
+
+/* Estilo del texto del paso */
+.step p {
+    font-size : 15px; /* Tamaño de fuente del texto */
+    color : #555; /* Color del texto gris */
+}
+
+/* SECCIÓN DE SERVICIOS */
+
+/* Contenedor principal para los servicios, centra el contenido y establece un fondo */
+.servi-container {
+    background-color: white; /* Color de fondo blanco */
+    display : flex; /* Utiliza flexbox para alinear servicios horizontalmente */
+    justify-content : center; /* Centra los servicios dentro del contenedor */
+    flex-wrap : wrap; /* Permite que los servicios se envuelvan a la siguiente línea */
+    padding : 40px 0; /* Espaciado interno en la parte superior e inferior */
+    margin : 0 auto; /* Centra el contenedor horizontalmente */
+    max-width : 1200px; /* Ancho máximo del contenedor */
+    
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+/* Estilo de cada servicio */
+.servi {
+    display: flex; /* Utiliza flexbox para alinear el contenido del servicio */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: space-between; /* Espacio entre la imagen y el texto */
+    margin-bottom: 30px; /* Margen inferior para separar servicios */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #eaeaea; /* Bordes del servicio */
+    border-radius: 10px; /* Bordes redondeados */
+    position: relative; /* Posicionamiento relativo para elementos absolutamente posicionados */
+}
+
+/* Estilo al pasar el ratón sobre un servicio */
+.servi:hover {
+    transform : translateY(-5px); /* Mueve el servicio hacia arriba al pasar el ratón */
+    box-shadow : 0 8px 20px rgb(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    transform : translateY(-5px) rotate(2deg); /* Agrega rotación al pasar el ratón */
+    background-color : #eadcdc; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilo de la imagen dentro del servicio */
+.servi-image img {
+    width: 150px; /* Ancho fijo para la imagen */
+    height: auto; /* Altura automática para mantener proporciones */
+}
+
+/* Contenedor del texto del servicio */
+.servi-text {
+    flex: 1; /* Permite que el contenedor del texto ocupe el espacio restante */
+    padding: 0 20px; /* Espaciado interno a los lados */
+}
+
+/* Estilo del título del servicio */
+.servi h2 {
+    font-size: 24px; /* Tamaño de fuente del título */
+    color: #ff0000; /* Color del título en rojo */
+    margin-bottom: 10px; /* Margen inferior para separar del texto siguiente */
+}
+
+/* Estilo del texto del servicio */
+.servi p {
+    font-size: 16px; /* Tamaño de fuente del texto */
+    color: #555; /* Color del texto gris */
+}
+
+/* Estilo del número del servicio, posicionado en la parte superior derecha */
+.servi-number {
+    font-size: 72px; /* Tamaño de fuente grande para el número */
+    font-weight: bold; /* Texto en negrita */
+    color: #f1c40f; /* Color del número en amarillo */
+    position: absolute; /* Posiciona el número absolutamente */
+    right: 20px; /* Posición a la derecha */
+    top: -30px; /* Posición hacia arriba */
+}
+
+/* Estilo para el número del primer servicio, posicionado a la izquierda */
+.servi-number1 {
+    font-size: 72px; /* Tamaño de fuente grande para el número */
+    font-weight: bold; /* Texto en negrita */
+    color: #f1c40f; /* Color del número en amarillo */
+    position: absolute; /* Posiciona el número absolutamente */
+    left: 20px; /* Posición a la izquierda */
+    top: -30px; /* Posición hacia arriba */
+}
+
+/* Cambia el orden de la imagen del segundo servicio para que aparezca a la derecha */
+.servi:nth-child(2) .servi-image {
+    order: 2; /* Para que la imagen quede a la derecha en el segundo paso */
+}
+
+/* Cambia el orden de la imagen del cuarto servicio para que aparezca a la derecha */
+.servi:nth-child(4) .servi-image {
+    order: 4; /* Cambia el orden de la imagen del cuarto servicio */
+}
+
+/* Cambia el orden de la imagen del sexto servicio para que aparezca a la derecha */
+.servi:nth-child(6) .servi-image {
+    order: 6; /* Cambia el orden de la imagen del sexto servicio */
+}
+
+/* Video Section Alternativa */
+
+/* Estilo del contenedor de la sección de video */
+.video-section-alt {
+    display: flex; /* Utiliza flexbox para alinear elementos en la sección */
+    justify-content: space-between; /* Espacio entre el texto y el video */
+    align-items: center; /* Alinea verticalmente al centro */
+    margin: 20px 0; /* Margen vertical para separar de otros elementos */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Contenedor del texto y el video */
+.video-text-container-alt {
+    display: flex; /* Utiliza flexbox para alinear texto y video */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%; /* Ancho completo del contenedor */
+}
+
+/* Contenedor de la visión a la izquierda del video */
+.vision-container-alt {
+    flex: 1; /* Permite que el contenedor ocupe el espacio restante */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin-right: 20px; /* Margen a la derecha */
+}
+
+
+/* Contenedor del video en el centro */
+.video-container-alt {
+    flex: 0 0 500px; /* Establece un ancho fijo para el contenedor de video */
+    margin: 0 20px; /* Margen a los lados del contenedor de video */
+}
+
+/* Estilo para el elemento de video, asegura que ocupe todo el ancho del contenedor */
+video {
+    width: 100%; /* Ancho del video completo dentro del contenedor */
+    border-radius: 8px; /* Bordes redondeados para el video */
+}
+
+/* Contenedor de la misión a la derecha del video */
+.mision-container-alt {
+    flex: 1; /* Permite que el contenedor ocupe el espacio restante */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin-left: 20px; /* Margen a la izquierda */
+}
+
+/* Diseño de las cards */
+.card-alt {
+    background-color: white; /* Color de fondo blanco para las cards */
+    border-radius: 10px; /* Bordes redondeados para las cards */
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.1); /* Sombra para dar profundidad a las cards */
+    padding: 20px; /* Espaciado interno dentro de las cards */
+    margin: 20px; /* Margen alrededor de las cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para efectos al pasar el ratón */
+}
+
+/* Estilo al pasar el ratón sobre una card */
+.card-alt:hover {
+    transform: translateY(-5px); /* Mueve la card hacia arriba al pasar el ratón */
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    background-color: #eadcdc; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilo del título dentro de una card */
+.card-alt h2 {
+    margin-bottom: 10px; /* Margen inferior para separar del texto siguiente */
+    color: #ff5722; /* Color del título en naranja */
+}
+
+/* Estilo del texto dentro de una card */
+.card-alt p {
+    font-size: 20px; /* Tamaño de fuente del texto */
+    margin-bottom: 10px; /* Margen inferior para separar del texto siguiente */
+    color: #333; /* Color del texto gris oscuro */
+}
+
+/* Rebotes de Cargalito: Mantiene el mismo estilo */
+.bouncing-logo {
+    width: 200px; /* Ancho del logo */
+    animation: bounce 3s infinite; /* Animación de rebote continua */
+}
+
+/* Definición de la animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Posición original en estos puntos de la animación */
+    }
+    40% {
+        transform: translateY(-20px); /* Sube 20px en el 40% de la animación */
+    }
+    60% {
+        transform: translateY(-10px); /* Sube 10px en el 60% de la animación */
+}
+}
+
+/* SECCION CONTACTOS */
+.whatsapp { 
+    display: flex; /* Aplica un contenedor flexible para organizar los hijos. */
+    flex-direction: column; /* Coloca los elementos uno debajo del otro. */
+    align-items: center; /* Centra los elementos horizontalmente en el contenedor. */
+}
+.whatsapp img { 
+    width: 60px; /* Establece el ancho de la imagen a 60 píxeles. */
+    height: 60px; /* Establece la altura de la imagen a 60 píxeles. */
+    margin-bottom: 10px; /* Añade un espacio de 10 píxeles debajo de la imagen. */
+}
+.qr-code { 
+    margin-top: 10px; /* Agrega un espacio superior de 10 píxeles. */
+    text-align: center; /* Centra el contenido de texto dentro del contenedor. */
+}
+.qr-code img { 
+    width: 100px; /* Establece el ancho de la imagen a 100 píxeles. */
+    height: 100px; /* Establece la altura de la imagen a 100 píxeles. */
+}
+.icon { 
+    width: 60px; /* Establece el ancho del ícono a 60 píxeles. */
+    height: 60px; /* Establece la altura del ícono a 60 píxeles. */
+    margin-right: 10px; /* Agrega un margen derecho de 10 píxeles. */
+}
+body { 
+    font-family: Arial, sans-serif; /* Define la fuente del texto como Arial o sans-serif. */
+    background-color: #f0f0f0; /* Coloca un fondo gris claro para toda la página. */
+    margin: 0; /* Elimina los márgenes predeterminados del cuerpo. */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo. */
+    font-size: 20px; /* Establece el tamaño del texto a 20 píxeles. */
+}
+.contact-bar { 
+    background-color: #e70c0c; /* Aplica un fondo rojo a la barra de contacto. */
+    color: white; /* Establece el color del texto en blanco. */
+    padding: 50px; /* Aplica un relleno de 50 píxeles alrededor de la barra. */
+    display: flex; /* Usa flexbox para organizar los elementos hijos en línea. */
+    justify-content: space-between; /* Coloca los elementos hijos separados con espacio entre ellos. */
+    align-items: center; /* Alinea los elementos verticalmente al centro. */
+}
+.contact-info, .contact-email { 
+    margin-right: 200px; /* Aplica un margen derecho de 200 píxeles a ambos elementos. */
+    display: flex; /* Aplica flexbox para organizar los elementos hijos en línea. */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor. */
+}
+.contact-info span { 
+    margin-left: 10px; /* Agrega un margen izquierdo de 10 píxeles al span. */
+    font-weight: bold; /* Hace que el texto dentro del span sea en negrita. */
+}
+.contact-info a, .contact-email a { 
+    color: white; /* Establece el color de los enlaces a blanco. */
+    text-decoration: none; /* Elimina el subrayado de los enlaces. */
+    font-size: 18px; /* Define el tamaño del texto de los enlaces a 18 píxeles. */
+}
+.contact-info a:hover, .contact-email a:hover { 
+    text-decoration: underline; /* Subraya los enlaces cuando el cursor pasa sobre ellos. */
+}
+.icon { 
+    width: 60px; /* Define el ancho de los íconos a 60 píxeles. */
+    height: 60px; /* Define la altura de los íconos a 60 píxeles. */
+    margin-right: 10px; /* Agrega un margen derecho de 10 píxeles a los íconos. */
+}
+
+/* MAPA */
+#map { 
+    height: 500px; /* Establece la altura del mapa en 500 píxeles. */
+    width: 60%; /* Define el ancho del mapa en el 60% del contenedor. */
+}
+#search { 
+    width: 100%; /* Define que el input de búsqueda ocupe todo el ancho disponible. */
+    padding: 10px; /* Aplica un relleno de 10 píxeles dentro del input. */
+    font-size: 16px; /* Establece el tamaño del texto del input a 16 píxeles. */
+    border-radius: 25px; /* Aplica bordes redondeados con un radio de 25 píxeles. */
+    border: #ccc solid 1px; /* Establece un borde sólido gris claro de 1 píxel. */
+    outline: none; /* Elimina el contorno cuando se selecciona el input. */
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1); /* Aplica una sombra ligera alrededor del input. */
+    transition: box-shadow 0.3s ease-in-out; /* Añade una transición suave en el cambio de sombra. */
+    margin-bottom: 20px; /* Añade un margen inferior de 20 píxeles debajo del input. */
+}
+#search:focus { 
+    box-shadow: 0 6px 12px rgb(0, 0, 0, 0.2); /* Aumenta la sombra del input cuando está enfocado. */
+}
+#search::placeholder { 
+    color: #999; /* Establece el color del texto de marcador de posición a gris claro. */
+    font-style: italic; /* Aplica estilo itálico al texto del marcador de posición. */
+}
+.leaflet-control-geocoder { 
+    display: none; /* Oculta el control de geocodificación de Leaflet en el mapa. */
+}
+    
+            
+/*footer*/
+.footer { 
+    background-color: #8c7c7c; /* Define el color de fondo del footer. */
+    padding: 100px; /* Aplica un relleno de 100 píxeles alrededor del contenido del footer. */
+}
+.footer-content { 
+    display: flex; /* Usa flexbox para organizar los elementos dentro del footer. */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos. */
+    align-items: flex-start; /* Alinea los elementos al inicio (parte superior) del contenedor. */
+}
+.footer-logo { 
+    flex: 1; /* Hace que el contenedor del logo ocupe una parte igual del espacio disponible. */
+    margin-right: 20px; /* Aplica un margen derecho de 20 píxeles. */
+}
+.footer-logo img { 
+    width: 170px; /* Establece el ancho de la imagen del logo a 170 píxeles. */
+    animation: move-left-right 3s ease-in-out infinite; /* Aplica una animación de movimiento continuo de izquierda a derecha. */
+}
+
+/* Definición de la animación */
+@keyframes move-left-right { 
+    0% { 
+        transform: translateX(0); /* Posición inicial del logo (sin movimiento). */
+    }
+    50% { 
+        transform: translateX(20px); /* Mueve el logo 20 píxeles a la derecha. */
+    }
+    100% { 
+        transform: translateX(0); /* Regresa el logo a su posición original. */
+    }
+}
+.footer-contact { 
+    flex: 1; /* Hace que el contenedor de contacto ocupe una parte igual del espacio disponible. */
+}
+.contact-item { 
+    display: flex; /* Usa flexbox para alinear los elementos de contacto. */
+    align-items: center; /* Alinea verticalmente los íconos y texto en el centro. */
+    margin-bottom: 15px; /* Aplica un margen inferior de 15 píxeles entre los elementos de contacto. */
+}
+.contact-item img { 
+    width: 50px; /* Establece el ancho de los íconos a 50 píxeles. */
+    margin-right: 10px; /* Aplica un margen derecho de 10 píxeles entre el ícono y el texto. */
+}
+.footer-links, .footer-social, .footer-feedback { 
+    flex: 1; /* Hace que cada sección (enlaces, redes sociales y feedback) ocupe una parte igual del espacio disponible. */
+    margin-left: 20px; /* Aplica un margen izquierdo de 20 píxeles a estas secciones. */
+}
+.footer-links h3, .footer-social h3, .footer-feedback h3 { 
+    margin-bottom: 10px; /* Aplica un margen inferior de 10 píxeles a los títulos (h3) de cada sección. */
+}
+.footer-links ul, .footer-social ul { 
+    list-style: none; /* Elimina el estilo de lista (sin viñetas) para las listas dentro de las secciones de enlaces y redes sociales. */
+    padding: 0; /* Elimina el relleno predeterminado de las listas. */
+}
+.footer-links li, .footer-social li { 
+    margin-bottom: 25px; /* Aplica un margen inferior de 25 píxeles entre los elementos de las listas. */
+}
+.footer-links a, .footer-social a { 
+    text-decoration: underline; /* Subraya los enlaces. */
+    color: rgb(0, 0, 0); /* Define el color de los enlaces como negro. */
+}
+.footer-social ul { 
+    display: flex; /* Usa flexbox para organizar los íconos de redes sociales en línea. */
+}
+.footer-social li { 
+    margin-right: 10px; /* Aplica un margen derecho de 10 píxeles entre los íconos de redes sociales. */
+}
+.footer-social img { 
+    width: 50px; /* Establece el ancho de los íconos de redes sociales a 50 píxeles. */
+}
+.footer-feedback form { 
+    display: flex; /* Usa flexbox para organizar los campos del formulario en una columna. */
+    flex-direction: column; /* Coloca los campos del formulario en una columna (uno debajo del otro). */
+}
+.footer-feedback input, .footer-feedback textarea { 
+    margin-bottom: 15px; /* Aplica un margen inferior de 15 píxeles entre los campos del formulario. */
+    padding: 15px; /* Aplica un relleno interno de 15 píxeles en los campos del formulario. */
+    border: #999 solid 1px; /* Establece un borde gris (#999) sólido de 1 píxel para los campos del formulario. */
+    border-radius: 4px; /* Aplica bordes redondeados con un radio de 4 píxeles. */
+}
+.footer-feedback button { 
+    padding: 10px; /* Aplica un relleno interno de 10 píxeles al botón de envío. */
+    background-color: #444; /* Define el color de fondo del botón como gris oscuro (#444). */
+    color: white; /* Establece el color del texto del botón en blanco. */
+    border: none; /* Elimina los bordes del botón. */
+    border-radius: 4px; /* Aplica bordes redondeados con un radio de 4 píxeles al botón. */
+    cursor: pointer; /* Cambia el cursor a puntero cuando se pasa sobre el botón. */
+}
+.footer-feedback button:hover { 
+    background-color: #ae2727; /* Cambia el color de fondo del botón a rojo oscuro (#ae2727) cuando se pasa el cursor por encima. */
+}

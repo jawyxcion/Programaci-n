@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación - Paso 2</title>
+    <link rel="stylesheet" href="iniciosesion.css">
+    <link rel="stylesheet" href="iniciosesionresponsive.css">
+</head>
+<body>
+    <div class="login-container">
+        <a href="index.html"><img src="img LOGO/LOGO-CARGA-TODO-28nov19 (1).png" alt="Logo de la Empresa" class="company-logo"></a>
+        <h2>Verificación - Paso 2</h2>
+        <p>Por favor elige si deseas recibir el código de verificación por correo o WhatsApp:</p>
+        <div class="form-group verification-methods">
+            <label><input type="radio" name="verificationMethod" value="email" required> Correo</label>
+            <label><input type="radio" name="verificationMethod" value="whatsapp" required> WhatsApp</label>
+        </div>
+        
+        <p>Introduce el código de 6 dígitos que recibiste:</p>
+        <div class="code-inputs">
+            <input type="text" maxlength="1" class="code-input" required>
+            <input type="text" maxlength="1" class="code-input" required>
+            <input type="text" maxlength="1" class="code-input" required>
+            <input type="text" maxlength="1" class="code-input" required>
+            <input type="text" maxlength="1" class="code-input" required>
+            <input type="text" maxlength="1" class="code-input" required>
+        </div>
+        <a href="identificacion.html" class="verificar">Verificar</a>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="registro.js"></script>
+    <script>
+        // Recuperar los datos de localStorage (esto asume que ya has guardado el email o teléfono en el registro)
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        // Mostrar el mensaje correspondiente cuando se elige la opción de envío de código
+        document.querySelectorAll('input[name="verificationMethod"]').forEach((radio) => {
+            radio.addEventListener('change', function () {
+                const selectedMethod = this.value;
+                let message = '';
+
+                if (selectedMethod === 'email') {
+                    message = `El código de verificación ha sido enviado a: ${userData.email}`;
+                } else if (selectedMethod === 'whatsapp') {
+                    message = `El código de verificación ha sido enviado al número:${userData.countryCode} ${userData.phoneNumber}`;
+                }
+
+                alert(message);  // Mostrar mensaje al usuario
+            });
+        });
+
+        // Verificar si el código ingresado es correcto y evitar avanzar si no está completo
+        document.querySelector('.verificar').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Obtener los inputs donde el usuario ingresa el código
+            const codeInputs = document.querySelectorAll('.code-input');
+            let enteredCode = '';
+
+            // Juntar los valores de los inputs en un solo string y remover espacios en blanco
+            codeInputs.forEach(input => {
+                enteredCode += input.value.trim();  // trim() remueve espacios antes y después de cada dígito
+            });
+
+            // Asegurarse de que el código tenga 6 dígitos antes de avanzar
+            if (enteredCode.length !== 6 || /[^0-9]/.test(enteredCode)) {
+                alert('Por favor, introduce el código de 6 dígitos completo.');
+                return; // Evitar avanzar si no se ha ingresado un código válido
+            }
+
+            // Simular el código generado (en una implementación real, se recibiría del backend)
+            const verificationCode = '123456';  // Este sería el código que el backend envía
+
+            // Verificar si el código ingresado es correcto
+            if (enteredCode === verificationCode) {
+                // Código correcto
+                alert('Verificación exitosa');
+                window.location.href = 'identificacion.html';  // Redirigir a la siguiente página
+            } else {
+                // Código incorrecto
+                alert('El código ingresado es incorrecto. Por favor, intenta nuevamente.');
+            }
+        });
+    </script>
+</body>
+</html>

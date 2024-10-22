@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="index.js"></script>
+    <title>CargalotodoUSA</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#video-section">
+            <img src="img LOGO/LOGO-CARGA-TODO-28nov19 (1).png" alt="Logo" class="logo">
+        </a>
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="navbar-items">
+            <a href="#inicio" class="navbar-item">Inicio</a>
+            <a href="#como-funciona" class="navbar-item">¿Cómo Funciona?</a>
+            <a href="#servicios" class="navbar-item">Servicios</a>
+            <a href="#contacto" class="navbar-item">Contacto</a>
+            <a href="iniciosesion.html">
+                <img src="https://static.vecteezy.com/system/resources/previews/008/506/404/non_2x/contact-person-red-icon-free-png.png" alt="Inicio de Sesión" class="login-icon">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Sección de video (Hero) -->
+    <section id="video-section" class="hero">
+        <video autoplay loop muted playsinline>
+            <source src="videos/avion fondo.mp4" type="video/mp4">
+            
+        </video>
+
+<a href="https://api.whatsapp.com/send?phone=70068909&text=Hola,%20quiero%20consultarte%20algo" class="whatsapp-button" target="_blank">
+    <img src="img contactos/whatsapp.png" alt="WhatsApp">
+          </a>
+
+
+</section>
+<!-- Sección de botones interactivos -->
+<section class="cta-buttons">
+    <div class="cta-button">
+        <a href="rastreocodigo.html">
+            <img src="img inicio/rastreo-de-orden (1).png" alt="Web Tracking">
+            <p>Rastrear</p>
+        </a>
+    </div>
+    <div class="cta-button">
+        <a href="cotizar.html">
+            <img src="img inicio/prealerta.png" alt="Quote your cargo">
+            <p>Pre-Alertar</p>
+        </a>
+    </div>
+    <div class="cta-button">
+        <a href="codigo.html">
+            <img src="img inicio/tarjeta-de-credito (1).png" alt="Web Tracking">
+            <p>Metodos de pago</p>
+        </a>
+    </div>
+    <div class="cta-button">
+        <a href="cotizar.html">
+            <img src="img servicios/cotizar.png" alt="Quote your cargo">
+            <p>Cotizar</p>
+        </a>
+    </div>
+</section>
+
+<section id="inicio">
+    <section class="intro" style="text-align: center;">
+            
+        <h2>Realiza cualquiera de tus compras en Estados Unidos con Cargalotodo</h2>
+        <h1>La mejor manera de enviar de tus tiendas preferidas de Estados Unidos a Costa Rica</h1>
+        <div style="height: 25px;"></div>
+        <p>Recuerda registrarte para tener acceso a tu casillero con CargaloTodo</p>
+        <div style="height: 50px;"></div>
+        <a href="index2.html" class="jump-button">¡Regístrate Gratis!</a>
+        <div style="height: 25px;"></div>
+    </section>
+
+    <div class="container">
+        <!-- Texto dentro de una card a la izquierda -->
+        <div class="card">
+            <h2>Tiendas</h2>
+            <p>Puedes elegir tu tienda online en Estados Unidos favorita para realizar tu compra, ¡Recuerda enviarnos tu Pre-Alerta!</p>
+            <div class="video-container">
+                <video autoplay loop muted playsinline>
+                    <source src="videos/compra online.mp4" type="video/mp4">
+                    
+                </video>
+            </div>
+        </div>
+    
+        <!-- Logos a la derecha -->
+        <div class="store-logos">
+            <div class="logo">
+                <a href="https://www.ebay.com" target="_blank">
+                    <img src="logos tiendas/2560px-EBay_logo.svg.png" alt="eBay">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.aliexpress.com" target="_blank">
+                    <img src="logos tiendas/Aliexpress_logo.svg.png" alt="AliExpress">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.amazon.com" target="_blank">
+                    <img src="logos tiendas/Amazon_logo.svg" alt="Amazon">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.bestbuy.com" target="_blank">
+                    <img src="logos tiendas/images.png" alt="bestbuy">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.shein.com" target="_blank">
+                    <img src="logos tiendas/Shein-logo.png" alt="shein">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.underarmour.com" target="_blank">
+                    <img src="logos tiendas/Under_Armour-Logo.wine.png" alt="under armour">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.drjays.com" target="_blank">
+                    <img src="logos tiendas/drjays.jpeg" alt="drjays">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.macys.com/" target="_blank">
+                    <img src="logos tiendas/Macys_logo.svg.png" alt="macys">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.zappos.com" target="_blank">
+                    <img src="logos tiendas/918_zappos.jpg" alt="zappos">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.levi.com/US/en_US/?srsltid=AfmBOoqrFaaA0sXh5NdVZggz6LCwq2FKda89fR5rMNQy_L3T9Opky0c7" target="_blank">
+                    <img src="logos tiendas/Levis-logo-quer.svg.png" alt="levis">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.adidas.com/us/gazelle?gad_source=1&gclid=Cj0KCQjwgrO4BhC2ARIsAKQ7zUlpunZRn2-NDopr0og-cHxWHJfjyv3ibWXd7Y54WEQEepfw5wT7prMaAiVNEALw_wcB&gclsrc=aw.ds" target="_blank">
+                    <img src="logos tiendas/Adidas_Logo.svg" alt="adidas">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.nike.com" target="_blank">
+                    <img src="logos tiendas/Nike-Logo.png" alt="nike">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.vans.com/en-us" target="_blank">
+                    <img src="logos tiendas/vans.png" alt="vans">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.victoriassecret.com/us/" target="_blank">
+                    <img src="logos tiendas/Victoria-Secret-Logo.png" alt="Victoria Secret">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.samsung.com/us/" target="_blank">
+                    <img src="logos tiendas/Samsung_Logo.svg.png" alt="Samsung">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://us.puma.com/us/en?srsltid=AfmBOoqZT9wIuGmM-kOq0rg8B5XzCDvXW1XBKqVNtySHd7Zwm6GSiIvZ" target="_blank">
+                    <img src="logos tiendas/puma-logo.jpg" alt="PUMA">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.reebok.com" target="_blank">
+                    <img src="logos tiendas/Reebok_logo19.png" alt="reebok">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.hp.com/us-en/home.html" target="_blank">
+                    <img src="logos tiendas/2048px-HP_logo_2012.svg.png" alt="HP">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.express.com" target="_blank">
+                    <img src="logos tiendas/Express_Clothing_Logo.SVG.png" alt="express">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.lenovo.com/us/en/?orgRef=https%253A%252F%252Fwww.google.com%252F&srsltid=AfmBOorv6lm94c7kuxHMjvU9ON9gHpNu1_wEOkGvPGd5ogUw8EKzKdwT" target="_blank">
+                    <img src="logos tiendas/Branding_lenovo-logo_lenovologoposred_low_res.png" alt="Lenovo">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.gap.com" target="_blank">
+                    <img src="logos tiendas/gap-logo-6EDDC78F9D-seeklogo.com.png" alt="GAP">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.childrensplace.com/us/home" target="_blank">
+                    <img src="logos tiendas/blt8c0a901780eb2a07-TCPlogo.png" alt="Children Place">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.temu.com/?refer_page_name=bgn_verification&refer_page_id=10017_1729186293020_csjj36xtjq&refer_page_sn=10017&_x_sessn_id=1jbxzq2tik" target="_blank">
+                    <img src="logos tiendas/Temu-Logo.png" alt="Temu">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://latam.nihaojewelry.com/en/?utm_source=ADS&utm_medium=brand&utm_campaign=10248921279&utm_group=101823895826&utm_keyword=nihaojewelry%20usa&gad_source=1&gclid=CjwKCAjw68K4BhAuEiwAylp3kmtEbAd_-TX894OX2px2ZporG4mSOwBfRRAk0kJNgkOxTK4dik4yKxoCczkQAvD_BwE" target="_blank">
+                    <img src="logos tiendas/1687341684104499200.png" alt="Nihao">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.target.com" target="_blank">
+                    <img src="logos tiendas/Target_logo.svg.png" alt="Target">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.wish.com" target="_blank">
+                    <img src="logos tiendas/wish.png" alt="Wish">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="https://www.rowe-oil.com/en" target="_blank">
+                    <img src="logos tiendas/rowe.png" alt="Rowe">
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+
+<section id="como-funciona" style="text-align: center;">
+
+<!-- Contenido de la sección ¿Cómo Funciona? -->
+<h2>¿Cómo Funciona?</h2>
+<p>Comprar en Estados Unidos nunca había sido tan fácil. Hemos simplificado los procesos de envío de tus compras en línea para garantizar que tengas una experiencia fácil, rápida y confiable.</p>
+
+<div style="height: 100px;"></div>
+
+<div class="steps">
+    <div class="step">
+        <h3><span class="step-number">1</span> Regístrate GRATIS para obtener tu dirección de casillero.</h3>
+        <p>Crea una cuenta Cargalotodo para tener una dirección en Estados Unidos, gratis.</p>
+        <img src="img como funciona/registrate.png" alt="Registro" width="150" height="130" align="reitg"padding: 10px 20px; />
+    </div>
+    <div class="step">
+        <h3><span class="step-number">2</span> Compra</h3>
+        <p>Ingresa a tu tienda en línea favorita en Estados Unidos y compra utilizando tu nueva dirección de Cargalotodo.</p>
+        <img src="img como funciona/compraon.png" alt="Compra" width="160" height="130" align="reitg" padding: 10px 20px; />
+    </div>
+    <div class="step">
+        <h3><span class="step-number">3</span> Pre-alerta</h3>
+        <p>Una vez el vendedor te envíe la confirmación de despacho, pre-alerta tus compras en nuestro sitio antes de que lleguen a nuestro almacén en Miami.</p>
+        <img src="img como funciona/alerta.png" alt="Pre-alerta"width="160" height="130" align="reitg" padding: 10px 20px; />
+    </div>
+    <div class="step">
+        <h3><span class="step-number">4</span> Recibe</h3>
+        <p>En nuestras tiendas, lockers o en la puerta de tu casa.</p>
+        <img src="img como funciona/recibir.png" alt="Recibe" width="160" height="130" align="reitg" padding: 10px 20px; />
+    </div>
+</div>
+
+<div style="height: 100px;"></div>
+
+</section>
+
+<section id="servicios" style="text-align: center;">
+
+    
+
+    <section class="how-it-works" style="text-align: center;">
+        <h2>Servicios</h2>
+        <p>En Cargalotodo te ofrecemos servicios que permanecen a su disposicion  </p>
+        <div style="height: 100px;"></div>
+       
+
+        <div class="servi-container">
+  
+            <div class="servi">
+                <div class="servi-number1">1</div>
+                <div class="servi-image">
+                    <img src="img servicios/auriculares.png" alt="Registro Aeropost">
+                </div>
+                <div class="servi-text">
+                    <h2>Asistencia en tus compras.</h2>
+                    <p>En CargaloTodo con gusto le brindamos toda la ayuda y asesoría necesaria 
+                       para que pueda realizar sus compras por internet. 
+                       Nos puede visitar en nuestra sucursal o contactarnos vía teléfono o correo.</p>
+                </div>
+            </div>
+    
+            <div class="servi">
+                <div class="servi-number">2</div>
+                <div class="servi-text">
+                    <h2> Cotizamos antes de que realice su compra.</h2>
+                    <p>Si lo desea, al enviarnos sus links a nuestro correo electrónico, estimamos 
+                       el costo total aproximado de su paquete hasta la puerta de su casa u oficina.</p>
+                </div>
+                <div class="servi-image">
+                    <img src="img servicios/calculadora.png" alt="Compra en línea">
+                </div>
+            </div>
+    
+            <div class="servi">
+                <div class="servi-number1">3</div>
+                <div class="servi-image">
+                    <img src="img servicios/casilleros.png" alt="Registro Aeropost">
+                </div>
+                <div class="servi-text">
+                    <h2>Casillero Gratis en Miami.</h2>
+                    <p>Abre tu casillero de forma gratuita sin ningun coston adicional con Cargalotodo tan solo iniciando sesión en Nuestro siitio.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="servi">
+                <div class="servi-number">4</div>
+                <div class="servi-image">
+                    <img src="img servicios/disponibilidad.png" alt="Registro Aeropost">
+                </div>
+                <div class="servi-text">
+                    <h2>Sistema 24/7.</h2>
+                    <p>Al abrir su cuenta dispone de información 100% automatizada 
+                       de sus paquetes las 24 horas los 7 días de la semana los 365 días del año.</p>
+                </div>
+            </div>
+            
+            <div class="servi">
+                <div class="servi-number1">5</div>
+                <div class="servi-image">
+                    <img src="img servicios/consolidacionpaq.png" alt="Registro Aeropost">
+                </div>
+                <div class="servi-text">
+                    <h2>Consolidaciones de paquetes.</h2>
+                    <p>Dispones de 30 días libres en nuestras bodegas en Miami para recibir tus paquetes sin costo adicional.</p>
+                </div>
+            </div>
+    
+            <div class="servi">
+                <div class="servi-number">6</div>
+                <div class="servi-image">
+                    <img src="img servicios/impuesto.png" alt="Registro Aeropost">
+                </div>
+                <div class="servi-text">
+                    <h2>Exoneración de impuestos</h2>
+                    <p>En CargaloTodo realizamos procesos de 
+                       exoneraciones con un costo adicional, 
+                       contáctenos y con gusto le ayudamos en su trámite.</p>
+                </div>
+            </div>
+    
+        </div>
+    
+    
+        <div style="height: 50px;"></div>
+   
+        <!-- TEXTO MINIAVION -->
+<section class="video-section-alt">
+    <!-- Contenedor que agrupa el video y el texto -->
+    <div class="video-text-container-alt">
+        <!-- Texto de Visión al lado izquierdo del video -->
+        <div class="vision-container-alt">
+            <div class="card-alt">
+                <div class="title-section">
+                    <img src="img cargalito/billete VERDADERO.png" alt="Logo Cargaloto" class="bouncing-logo">
+                </div>
+                <h2>Misión</h2>
+                <p>En CargaloTodoUsa, nos comprometemos a ofrecer soluciones logísticas integrales que priorizan la seguridad de cada carga, garantizando un transporte eficiente y confiable a nivel nacional e internacional. Nuestra misión es brindar asesoría personalizada a nuestros clientes asignándoles un asesor el cual los acompañara paso a paso incluso desde antes de obtener el casillero, apoyándolos en cada etapa del proceso de compra, logístico. Contamos con oficinas físicas ubicadas en Curridabat, estamos siempre a su disposición para ofrecer un servicio de calidad que impulse el crecimiento sostenible para usted y sus negocios, En CargaloTodoUsa, nuestro objetivo es brindar a nuestros clientes una experiencia de compra placentera y sin complicaciones. Nos comprometemos a acompañarlos en cada paso del proceso, asegurando que se sientan apoyados y tranquilos, donde tenga la sensación que solo compra y recibe sus compras, Nuestra empresa gestionará de manera integral todos los procesos logísticos desde Miami a Costa Rica, así como los trámites aduaneros y la obtención de permisos de salud, en caso de ser necesarios. Asimismo, aplicaremos los tratados de libre comercio pertinentes para facilitar sus adquisiciones.</p>
+            </div>
+        </div>
+        <!-- Video en el centro -->
+        <div class="video-container-alt">
+            <video autoplay loop muted playsinline>
+                <source src="videos/avion carga videomini.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+        <!-- Texto de Misión al lado derecho del video -->
+        <div class="mision-container-alt">
+            <div class="card-alt">
+                <h2>Visión</h2>
+                <p>Convertirnos en la empresa líder en soluciones logísticas en el mercado Courier, reconocida por nuestra excelencia en la seguridad del servicio, innovación tecnológica y atención al cliente. Aspiramos a establecer nuevos estándares en la industria del transporte mediante la asesoría personalizada y el soporte constante a nuestros clientes. Con un enfoque en la sostenibilidad, buscamos ser un socio estratégico confiable que fomente el éxito de cada uno de nuestros clientes y fortalezca su confianza en nuestros servicios.</p>
+                <div class="title-section">
+                    <img src="img cargalito/mesa VERDADERO.png" alt="Logo Cargaloto" class="bouncing-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</section>
+
+
+<section id="contacto" style="text-align: center;">
+
+<!-- Contenido de la sección Contacto -->
+<h2>Contacto</h2>
+<p>Información de contacto...</p>
+<div class="container">
+    <!-- Primera tarjeta: Rastreo de pedido -->
+    <div class="card">
+        <img src="img contactos/operador.png" alt="Rastreo de pedido" class="icon">
+        <h3>Conoce a nuestros Asesores</h3>
+        <p>¡Estos son los encargados de aseesorar tu proceso de compra con CargaloTodo!</p>
+        <a href="asesores.html">Asesores</a>
+    </div>
+
+    <!-- Segunda tarjeta: Contacto por WhatsApp -->
+    <div class="card">
+        <div class="whatsapp">
+            <img src="img contactos/SOPORTE.png" alt="WhatsApp" class="icon">
+            <h3>Contacta con Nuestros Asesores</h3>
+            <p>Haz clic aquí o escanea el siguiente código QR con tu celular.</p>
+            <a href="https://api.whatsapp.com/send?phone=70068909&text=Hola,%20quiero%20consultarte%20algo">Soporte</a>
+        </div>
+        <div class="qr-code">
+            <img src="img contactos/codigoqr VERDADERO.jpg" alt="Código QR" width="150" height="150">
+        </div>
+    </div>
+
+    <!-- Tercera tarjeta: Contacto -->
+    <div class="card">
+        <img src="img contactos/datos-de-contacto.png" alt="Contacto" class="icon">
+        <h3>Contacto</h3>
+        <p>Pocicion: Asesores de Cuenta.</p>
+        <p>Curridabat, Barrio San José, frente a Fábrica Café Volio</p>
+        <p>San José</p>
+        <p>+(506) 7006-8909</p>
+        <a href="tel:+50670068909">Llamar</a>
+    </div>
+</div>
+        </div>
+
+      <!-- parte de abajo -->
+    <div class="contact-bar">
+        <div class="contact-info">
+            <img src="img contactos/audifonos-inalambricos.png" alt="Auriculares" class="icon">
+            <span>Soporte: </span>
+            <a href="tel:+50670068909">  +(506)7006-8909</a>
+        </div>
+        <div class="contact-email">
+            <img src="img contactos/correo-de-propaganda.png" alt="Auriculares" class="icon">
+            <a href="mailto:info@cargalotodousa.com">info@cargalotodousa.com</a>
+        </div>
+    </div>
+
+    <div style="height: 100px;"></div>
+    <div class="container">
+        <!-- Texto dentro de una card a la izquierda -->
+        <div class="card">
+            <h2>Información de Entrega</h2>
+            <input id="search" type="text" placeholder="Busca una ubicación">
+            <p>Tus paquetes parten hacía tu destino desde nuestra Sucursal</p>
+            <ul>
+              <li>Sucursal CargalotodoUSA | WX83+2PJ, San José Province, Curridabat, 11801</li>
+            </ul>
+
+            <div class="title-section">
+                <img src="img cargalito/cajita VERDADERO.png" alt="Logo Cargaloto" class="bouncing-logo">
+            </div>
+        </div>
+    
+        <!-- Mapa a la derecha -->
+        <div id="map"></div>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="img footer/logo con camion.png" alt="Logo" />
+        </div>
+        <div class="footer-contact">
+            <div class="contact-item">
+                <img src="img footer/llamada-telefonica.png" alt="Teléfono" />
+                <span>+(506)7006-8909</span>
+            </div>
+            <div class="contact-item">
+                <img src="img footer/email.png" alt="Email" />
+                <span>info@cargalotodousa.com</span>
+            </div>
+            <div class="contact-item">
+                <img src="img footer/location.png" alt="Ubicación" />
+                <span>Curridabat, Barrio San José, frente a Fábrica Café Volio</span>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h3>Enlaces</h3>
+            <ul>
+                <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                <li><a href="productos.html">Articulos Restringidos</a></li>
+                <li><a href="registro.html">¡AFILIATE YA!</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Redes Sociales</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/cargalotodousa/"><img src="img footer/facebook.png" alt="Facebook" /></a></li>
+                
+                <li><a href="https://www.instagram.com/cargalotodousa/"><img src="img footer/instagram.png" alt="Instagram" /></a></li>
+            </ul>
+        </div>
+        <div class="footer-feedback">
+            <h3>Deja tu opinión</h3>
+            <form id="feedback-form">
+                <input type="email" placeholder="Tu correo electrónico" required />
+                <textarea placeholder="Tu opinión" required></textarea>
+                <button type="submit">Enviar opinión</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2024 CargalotodoUSA. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+// Ubicaciones fijas
+var locations = [
+            { lat: 9.914111776268365, lng: -84.04560495314416, name: "CargalotodoUSA curridabat" },  // Primera ubicación
+        ];
+    
+        // Inicializa el mapa centrado en la primera ubicación
+        var map = L.map('map').setView([locations[0].lat, locations[0].lng], 13);
+    
+        // Agrega las capas de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+    
+        // Agrega marcadores para cada ubicación
+        locations.forEach(function(loc) {
+            L.marker([loc.lat, loc.lng]).addTo(map)
+                .bindPopup(loc.name)
+                .openPopup();
+        });
+    
+        // Inicializa el geocodificador
+        var geocoder = L.Control.Geocoder.nominatim();
+    
+        // Conecta el buscador estilizado al geocodificador
+        document.getElementById("search").addEventListener("keydown", function(event) {
+          if (event.key === "Enter") { // Detecta cuando el usuario presiona 'Enter'
+            event.preventDefault(); // Evita que el formulario se envíe
+            var query = this.value; // Obtiene el texto de búsqueda
+    
+            // Realiza la búsqueda geocodificada
+            geocoder.geocode(query, function(results) {
+              if (results && results.length > 0) {
+                var result = results[0];
+                map.setView(result.center, 13); // Centra el mapa en la ubicación encontrada
+    
+                // Agrega un marcador en la ubicación encontrada
+                L.marker(result.center).addTo(map)
+                  .bindPopup(result.name)
+                  .openPopup();
+              } else {
+                alert("Ubicación no encontrada.");
+              }
+            });
+          }
+        });
+</script>
+<script>
+
+ // Seleccionamos el navbar y el menú hamburguesa
+ const navbar = document.querySelector('.navbar');
+    const menuIcon = document.querySelector('.menu-icon');
+    const navbarItems = document.querySelector('.navbar-items');
+
+    // Escuchamos el evento de scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled'); // Agregamos la clase 'scrolled'
+        } else {
+            navbar.classList.remove('scrolled'); // La quitamos si estamos arriba
+        }
+    });
+
+    // Funcionalidad del menú hamburguesa
+    menuIcon.addEventListener('click', function() {
+        navbarItems.classList.toggle('show'); // Alterna la clase 'show' para mostrar/ocultar el menú
+    });
+
+</script>
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        const body = document.body;
+
+        // Verifica si el desplazamiento es mayor que 0
+        if (window.scrollY > 0) {
+            body.classList.add('scrolled'); // Agrega la clase 'scrolled' al body
+        } else {
+            body.classList.remove('scrolled'); // Remueve la clase 'scrolled' del body
+        }
+    });
+</script>
+</body>
+
+
+</html>

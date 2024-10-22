@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    background-color: #0c0c0c;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* Estilos generales de la barra lateral */
+.side-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background-color: #30737b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacia elementos arriba y abajo */
+    align-items: center;
+    transition: width 0.5s ease;
+    padding: 20px 0;
+  }
+  
+  .side-navbar:hover {
+    width: 250px;
+  }
+  
+  /* Logo en la parte superior */
+  .navbar-logo img {
+    width: 100px;
+    transition: width 0.3s ease;
+  }
+  
+  .side-navbar:hover .navbar-logo img {
+    width: 120px; /* Cambia tamaño del logo al hacer hover */
+  }
+
+
+.contact-bar { 
+    background-color: #19393c; /* Aplica un fondo rojo a la barra de contacto. */
+    color: white; /* Establece el color del texto en blanco. */
+    padding: 50px; /* Aplica un relleno de 50 píxeles alrededor de la barra. */
+    display: flex; /* Usa flexbox para organizar los elementos hijos en línea. */
+    justify-content: space-between; /* Coloca los elementos hijos separados con espacio entre ellos. */
+    align-items: center; /* Alinea los elementos verticalmente al centro. */
+}
+.contact-info, .contact-email { 
+  margin-right: 200px; /* Aplica un margen derecho de 200 píxeles a ambos elementos. */
+  display: flex; /* Aplica flexbox para organizar los elementos hijos en línea. */
+  align-items: center; /* Centra verticalmente los elementos dentro del contenedor. */
+}
+.contact-info span { 
+  margin-left: 10px; /* Agrega un margen izquierdo de 10 píxeles al span. */
+  font-weight: bold; /* Hace que el texto dentro del span sea en negrita. */
+}
+.contact-info a, .contact-email a { 
+  color: white; /* Establece el color de los enlaces a blanco. */
+  text-decoration: none; /* Elimina el subrayado de los enlaces. */
+  font-size: 18px; /* Define el tamaño del texto de los enlaces a 18 píxeles. */
+}
+.icon { 
+  width: 60px; /* Define el ancho de los íconos a 60 píxeles. */
+  height: 60px; /* Define la altura de los íconos a 60 píxeles. */
+  margin-right: 10px; /* Agrega un margen derecho de 10 píxeles a los íconos. */
+}
+  
+  /* Elementos del menú */
+  .navbar-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #d2d2d2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-item img {
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar-item span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .side-navbar:hover .navbar-item span {
+    opacity: 1;
+  }
+  
+  .navbar-item:hover {
+    background-color: rgba(197, 168, 185, 0.2);
+  }
+  
+  
+  
+  
+  .content {
+    margin-left: 80px;
+    padding: 50px;
+  }
+  
+  .robot-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #232323, #0c0c0c);
+    transition: all 0.5s ease;
+  }
+  
+  .robot-text p {
+    font-size: 1.5em;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 144, 0.5);
+  }

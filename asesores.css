@@ -1,0 +1,206 @@
+/* Estilo general de la página */
+body {
+    background-image: url(fondo\ prueba\ \ \(1\).png);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.advisors-section {
+    background-image: url('fondo\ prueba\ \ \(1\).png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 60px; /* Espacio desde el navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para centrar mejor el contenido */
+    align-items: center; /* Centra horizontalmente */
+}
+
+/* Contenedor principal que incluye el logo y las cards */
+.title-section {
+    text-align: center; /* Centra el logo */
+    margin-bottom: 20px; /* Espacio entre el logo y las tarjetas */
+}
+
+.advisors-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px 20px 0 0;
+    padding: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards de los asesores */
+.advisor-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advisor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.advisor-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+    margin-bottom: 10px;
+}
+
+.advisor-name {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.advisor-department {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Estilo para el logo del título */
+.bouncing-logo {
+    width: 200px; /* Ajusta el tamaño del logo */
+    animation: bounce 3s infinite; /* Animación de rebote */
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    40% {
+        transform: translateY(-20px); /* Rebote hacia arriba */
+    }
+    60% {
+        transform: translateY(-10px); /* Rebote hacia abajo */
+    }
+}
+
+/* Botón para volver a la página principal */
+
+.back-button {
+    display: block; /* Cambiar a bloque para usar margen automático */
+    margin: 20px auto; /* Centrar el botón y espacio arriba y abajo */
+    width: fit-content; /* Ajustar el ancho al contenido del botón */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #ff0000; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de la fuente */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    margin-top: 20px; /* Espacio superior */
+
+   
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.back-button:hover {
+    background-color: #cc0000; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Aumentar el tamaño */
+}
+
+/* Estilo para el footer */
+.footer {
+    background-color : #8c7c7c;
+    padding : 100px;
+    }
+    .footer-content {
+    display : flex;
+    justify-content : space-between;
+    align-items : flex-start;
+    }
+    .footer-logo {
+    flex : 1;
+    margin-right : 20px;
+    }
+    .footer-logo img {
+        width: 170px;
+        animation: move-left-right 3s ease-in-out infinite; /* Animación continua */
+    }
+    
+    /* Definición de la animación */
+    @keyframes move-left-right {
+        0% {
+            transform: translateX(0); /* Posición inicial */
+        }
+        50% {
+            transform: translateX(20px); /* Mover a la derecha */
+        }
+        100% {
+            transform: translateX(0); /* Regresar a la posición inicial */
+    }
+    }
+    .footer-contact {
+    flex : 1;
+    }
+    .contact-item {
+    display : flex;
+    align-items : center;
+    margin-bottom : 15px;
+    }
+    .contact-item img {
+    width : 50px;
+    margin-right : 10px;
+    }
+    .footer-links, .footer-social, .footer-feedback {
+    flex : 1;
+    margin-left : 20px;
+    }
+    .footer-links h3, .footer-social h3, .footer-feedback h3 {
+    margin-bottom : 10px;
+    }
+    .footer-links ul, .footer-social ul {
+    list-style : none;
+    padding : 0;
+    }
+    .footer-links li, .footer-social li {
+    margin-bottom : 25px;
+    }
+    .footer-links a, .footer-social a {
+    text-decoration : underline;
+    color : rgb(0, 0, 0);
+    }
+    .footer-social ul {
+    display : flex;
+    }
+    .footer-social li {
+    margin-right : 10px;
+    }
+    .footer-social img {
+    width : 50px;
+    }
+    .footer-feedback form {
+    display : flex;
+    flex-direction : column;
+    }
+    .footer-feedback input, .footer-feedback textarea {
+    margin-bottom : 15px;
+    padding : 15px;
+    border : #999 solid 1px;
+    border-radius : 4px;
+    }
+    .footer-feedback button {
+    padding : 10px;
+    background-color : #444;
+    color : white;
+    border : none;
+    border-radius : 4px;
+    cursor : pointer;
+    }
+    .footer-feedback button:hover {
+    background-color : #ae2727;
+    }

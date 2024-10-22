@@ -1,0 +1,418 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(fondo\ prueba\ \ \(1\).png); /* Ajusta el nombre de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo con un poco de transparencia */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s;
+}
+
+.login-container:hover {
+    transform: scale(1.02); /* Efecto de escalado al pasar el mouse */
+}
+
+.company-logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 150px;
+    height: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #d10e0e;
+}
+
+p1, .message {
+    text-align: center;
+    color: #d10e0e;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 5px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #d10e0e;
+    outline: none;
+}
+
+.phone-group {
+    display: flex;
+    gap: 10px;
+}
+.apellidos-group {
+    display: flex;
+    gap: 10px;
+}
+
+
+select {
+    padding: 10px;
+    width: 27%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social-login button {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.facebook-login {
+    background-color: #3b5998;
+}
+
+.google-login {
+    background-color: #333;
+}
+
+.social-login img {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #d10e0e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #a00d0d;
+}
+
+.extra-options {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.extra-options a {
+    color: #d10e0e;
+    text-decoration: none;
+}
+
+.extra-options a:hover {
+    text-decoration: underline;
+}
+.code-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.code {
+    width: 40px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.volver {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d10e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.registrar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d10e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.identificar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d10e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.verificar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d10e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* alerta flotante de error */
+.error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    margin-top: 5px;
+}
+
+.error-placeholder {
+    color: red; /* Cambia el color del texto del placeholder a rojo */
+    font-style: italic; /* Opcional: puede hacer que el mensaje de error se vea diferente */
+}
+
+/*codigo */
+.tracking-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.tracking-container h2 {
+    text-align: center;
+    color: #d10e0e;
+}
+
+.tracking-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.tracking-container input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.tracking-container a.buscar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d10e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+}
+
+.tracking-container a.buscar:hover {
+    background-color: #a00d0d;
+}
+
+/*RASTREO*/
+ /* Estilos específicos para esta página */
+ .tracking-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.tracking-container h1, .tracking-container h2 {
+    text-align: center;
+    color: #d10e0e;
+}
+
+.tracking-container .status {
+    margin: 20px 0;
+}
+
+.tracking-container p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.tracking-steps {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.tracking-steps li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.complete {
+    background-color: #d1e7dd;
+    border-left: 5px solid #28a745;
+}
+
+.in-progress {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
+
+.pending {
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+.go-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d10e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+}
+
+.go-back:hover {
+    background-color: #a00d0d;
+}
+
+/*COTIZAR*/
+/* Estilos adicionales para la calculadora */
+.calculator-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+button {
+    padding: 10px 20px;
+    background-color: #d10e0e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #a00d0d;
+}
+
+.form-group.terms label {
+    display: flex;
+    
+}
+
+.form-group.terms input[type="checkbox"] {
+    margin-right: 10px; /* Añade un pequeño espacio entre el checkbox y el texto */
+}
+
+/*OJITO*/
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* Espacio para el ícono */
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+/* Estilos específicos para la sección de verificación */
+.verification-methods {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.verification-methods label {
+    display: flex;
+    align-items: center;
+}
+
+.verification-methods input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.validation-messages {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

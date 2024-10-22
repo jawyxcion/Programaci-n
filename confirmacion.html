@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación - Paso 4</title>
+    <link rel="stylesheet" href="iniciosesion.css">
+    <link rel="stylesheet" href="iniciosesionresponsive.css">
+</head>
+<body>
+    <div class="login-container">
+        <a href="index.html"><img src="img LOGO/LOGO-CARGA-TODO-28nov19 (1).png" alt="Logo de la Empresa" class="company-logo"></a>
+        <h2>¡Gracias por Registrarte en Cargalotodo!</h2>
+
+        <p>Tu registro ha sido completado exitosamente. Aquí está la información de tu casillero:</p>
+        <div class="casillero-info">
+            <p><strong>Nombre Completo:</strong> <span id="userFullName"></span></p>
+            <p><strong>Dirección:</strong> 1234 Calle Falsa</p>
+            <p><strong>Ciudad:</strong> Ciudad Ejemplo</p>
+            <p><strong>Estado:</strong> Estado Ejemplo</p>
+            <p><strong>Código Postal:</strong> 12345</p>
+            <p><strong>Número Telefónico:</strong> +506 1234-5678</p>
+        </div>
+
+        <p>Conoce cómo usar la dirección de casillero y sus utilidades: <a href="utilidades.html">aquí</a></p>
+        <p>La información ha sido guardada con éxito.</p>
+
+        <a href="iniciosesion.html" class="volver">Volver al inicio</a>
+    </div>
+
+    <script src=>
+        // Recuperar los datos del usuario de localStorage
+const userData = JSON.parse(localStorage.getItem('userData'));
+
+if (userData) {
+    // Mostrar el nombre completo del usuario
+    document.getElementById('userFullName').innerText = `${userData.firstName} ${userData.lastName1} ${userData.lastName2}`;
+}
+
+document.getElementById('returnHome').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+    </script>
+    
+</body>
+</html>

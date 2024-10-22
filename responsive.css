@@ -1,0 +1,516 @@
+/* Archivo CSS responsive */
+
+/* Estilos generales para el navbar */
+.navbar {
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+/* Estilos para el menú */
+.navbar-items {
+    display: flex; /* Muestra el menú por defecto */
+}
+
+.navbar-items.hide {
+    display: none; /* Oculta el menú */
+}
+
+/* Estilos responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-items {
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Asegúrate de que este valor coincide con la altura del navbar */
+        right: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Oculta el menú por defecto */
+    }
+
+    .navbar-items.show {
+        display: flex; /* Muestra el menú cuando tiene la clase "show" */
+    }
+
+    .menu-icon {
+        display: flex; /* Muestra el icono de menú */
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar-item {
+        padding: 10px 15px;
+        text-align: right;
+}
+}
+
+/*VIDEO INICIO*/
+.hero {
+    height: 100vh; /* Altura por defecto */
+}
+
+.hero video {
+    object-fit: cover; /* Asegura que el video cubra el área sin distorsionarse */
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Altura menor para tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 30vh; /* Altura aún menor para teléfonos */
+}
+}
+
+/*boton flotante */
+
+.whatsapp-button {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Estilo del icono de WhatsApp */
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Nubecita de texto flotante */
+.whatsapp-button::after {
+    content: 'Contáctanos';
+    position: absolute;
+    top: 50%;
+    left: -120px; /* Para que aparezca a la izquierda del botón */
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Comienza oculto */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+/* Mostrar la nubecita cuando el botón es hover */
+.whatsapp-button:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-10px); /* Le da un pequeño movimiento cuando aparece */
+}
+
+/* Animación para que la nubecita también flote suavemente */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(-50%) translateX(-10px); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-45%) translateX(-10px); /* Mueve un poco la nubecita hacia arriba */
+    }
+}
+
+/* Aplicar la animación al pseudo-elemento */
+.whatsapp-button::after {
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px; /* Ajusta la posición del botón */
+    }
+
+    .whatsapp-button::after {
+        left: -100px; /* Ajusta la posición de la nubecita */
+        font-size: 12px; /* Tamaño de fuente más pequeño en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        width: 40px;
+        height: 40px;
+        bottom: 10px;
+        right: 10px; /* Ajusta aún más la posición del botón */
+    }
+
+    .whatsapp-button::after {
+        left: -80px; /* Ajusta la posición de la nubecita */
+        font-size: 10px; /* Tamaño de fuente más pequeño en móviles */
+}
+}
+
+/*BOTONES INTERACTIVOS*/
+
+.cta-buttons {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.cta-button {
+    width: 50%;
+    max-width: 300px;
+    max-height: 150px;
+    padding: 20px;
+    border: #ddd solid 2px;
+    border-radius: 45px;
+    box-shadow: 0 6px 6px rgb(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 50px;
+    background-color: #f9f9f9;
+}
+
+.cta-button a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) rotate(2deg);
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.2);
+    background-color: #eadcdc;
+}
+
+.cta-button img {
+    width: 60px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.cta-button p {
+    color: #333;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif; /* Corrige el error de codificación */
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
+    .cta-button {
+        width: 80%; /* Ancho más amplio en tablets */
+        max-width: none; /* Permitir que ocupe todo el espacio disponible */
+    }
+
+    .cta-button img {
+        width: 50px; /* Ajusta el tamaño de la imagen */
+        height: 40px; /* Ajusta la altura de la imagen */
+    }
+
+    .cta-button p {
+        font-size: 1em; /* Reduce el tamaño de la fuente */
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        width: 90%; /* Ancho más amplio en móviles */
+        margin-bottom: 30px; /* Reduce el margen inferior */
+    }
+
+    .cta-button img {
+        width: 40px; /* Tamaño de imagen más pequeño en móviles */
+        height: 35px; /* Ajusta la altura de la imagen */
+    }
+
+    .cta-button p {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño en móviles */
+}
+}
+
+/*SECCION INICIO*/
+/* Para tablets y pantallas pequeñas */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-container {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+
+    .store-logos {
+        margin-top: 20px;
+        flex-direction: column;
+        max-width: 100%;
+        max-height: none; /* Quitar límite de altura en pantallas pequeñas */
+    }
+
+    .store-logos .logo {
+        flex: 0 1 45%; /* Dos columnas verticales */
+        margin-bottom: 20px; /* Espacio entre filas */
+    }
+
+    .store-logos .logo img {
+        max-width: 100%;
+        max-height: 100px;
+    }
+}
+
+/* Para teléfonos */
+@media screen and (max-width: 768px) {
+    .store-logos {
+        gap: 20px;
+    }
+
+    .store-logos .logo {
+        flex: 0 1 45%; /* Mantener 2 columnas verticales en teléfonos */
+}
+}
+
+/*SECCION DE COMO FUNCIONA*/
+/* Para tablets y pantallas pequeñas */
+@media screen and (max-width: 1024px) {
+    .steps {
+        padding: 0 40px; /* Reducir el padding para pantallas más pequeñas */
+    }
+
+    .step {
+        width: calc(50% - 20px); /* Hacer que se acomoden 2 por fila */
+    }
+}
+
+/* Para teléfonos */
+@media screen and (max-width: 768px) {
+    .steps {
+        padding: 0 20px; /* Más ajuste en padding para teléfonos */
+    }
+
+    .step {
+        width: calc(50% - 20px); /* Mantener 2 por fila en teléfonos también */
+        padding: 10px; /* Reducir el padding interno */
+}
+}
+
+/*Seccion de Servicios*/
+
+/* Responsive para tabletas y celulares */
+@media (max-width: 1024px) {
+    /* Ocultar el video en dispositivos móviles y tabletas */
+    .video-container-alt {
+        display: none; /* Oculta el video */
+    }
+
+    /* Ajuste de las cards para que Misión y Visión ocupen el espacio completo */
+    .video-text-container-alt {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: center; /* Centra el contenido */
+    }
+
+    .vision-container-alt,
+    .mision-container-alt {
+        width: 100%; /* Hace que las secciones de Visión y Misión ocupen el 100% del ancho */
+        margin: 10px 0; /* Espaciado vertical entre ellas */
+    }
+}
+
+/* Asegúrate de que el contenedor de los servicios se mantenga adecuado en móviles */
+@media (max-width: 768px) {
+    .servi-container {
+        padding: 20px; /* Ajusta el padding para móviles */
+    }
+
+    .servi {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: flex-start; /* Alinea el contenido a la izquierda */
+    }
+
+    .servi-image img {
+        width: 100%; /* Ajusta la imagen al ancho del contenedor */
+        max-width: 150px; /* Limita el tamaño máximo */
+    }
+
+    .servi-number,
+    .servi-number1 {
+        font-size: 48px; /* Ajusta el tamaño de los números en móviles */
+}
+}
+
+/*seccion de contacto*/
+
+/* Responsive para tabletas y celulares */
+@media (max-width: 1024px) {
+    /* Ajusta la barra de contacto para que sea vertical */
+    .contact-bar {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        padding: 20px; /* Reduce el padding para móviles */
+        align-items: center; /* Centra los elementos */
+        text-align: center; /* Alinea el texto al centro */
+    }
+
+    /* Ajusta la información de contacto */
+    .contact-info, .contact-email {
+        margin-right: 0; /* Elimina el margen derecho */
+        margin-bottom: 20px; /* Espaciado entre las secciones */
+        flex-direction: column; /* Cambia la dirección a columna */
+    }
+
+    /* Aumenta el tamaño del icono en la barra de contacto */
+    .icon {
+        width: 50px; /* Ajusta el tamaño del icono */
+        height: 50px; /* Ajusta el tamaño del icono */
+        margin-bottom: 10px; /* Espaciado inferior entre iconos */
+    }
+
+    /* Ajusta el tamaño de las imágenes en la sección de WhatsApp */
+    .whatsapp img {
+        width: 50px; /* Ajusta el tamaño de la imagen de WhatsApp */
+        height: 50px; /* Ajusta el tamaño de la imagen de WhatsApp */
+    }
+
+    /* Ajusta el tamaño del código QR */
+    .qr-code img {
+        width: 80px; /* Ajusta el tamaño de la imagen del código QR */
+        height: 80px; /* Ajusta el tamaño de la imagen del código QR */
+    }
+}
+
+/* Responsive adicional para móviles */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px; /* Ajusta el tamaño de fuente para móviles */
+    }
+    
+    .contact-bar {
+        padding: 10px; /* Reduce aún más el padding para móviles */
+    }
+
+    .contact-info span {
+        font-size: 16px; /* Ajusta el tamaño del texto */
+    }
+
+    .contact-info a, .contact-email a {
+        font-size: 16px; /* Ajusta el tamaño de los enlaces */
+}
+}
+
+/*MAPA*/
+/* Responsive para tabletas y celulares */
+@media (max-width: 1024px) {
+    #map {
+        height: 300px; /* Ajusta la altura del mapa en tabletas */
+        width: 100%; /* Hace que el mapa ocupe el 100% del ancho */
+    }
+
+    #search {
+        width: 90%; /* Ajusta el ancho del campo de búsqueda */
+        margin: 0 auto; /* Centra el campo de búsqueda */
+    }
+}
+
+/* Responsive adicional para móviles */
+@media (max-width: 768px) {
+    #map {
+        height: 250px; /* Ajusta la altura del mapa en móviles */
+    }
+
+    #search {
+        padding: 8px; /* Reduce el padding para móviles */
+        font-size: 14px; /* Ajusta el tamaño de fuente para móviles */
+        border-radius: 20px; /* Ajusta el radio del borde para móviles */
+}
+}
+
+/*SECCION FOOOTER*/
+
+/* Footer responsive */
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-logo,
+    .footer-contact,
+    .footer-links,
+    .footer-social,
+    .footer-feedback {
+        margin: 20px 0;
+    }
+    .footer-logo img,
+    .footer-social img,
+    .contact-item img {
+        width: 120px; /* ajusta según necesites */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo img {
+        width: 100px;
+    }
+    .footer-content {
+        padding: 20px;
+    }
+    .footer-feedback input, .footer-feedback textarea {
+        width: 100%;
+    }
+    .footer-feedback button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 50px 20px;
+    }
+    .footer-content {
+        padding: 0;
+    }
+    .footer-logo img,
+    .footer-social img,
+    .contact-item img {
+        width: 80px;
+    }
+    .footer-feedback input, .footer-feedback textarea {
+        padding: 10px;
+}
+}

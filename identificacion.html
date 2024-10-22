@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificación - Paso 3</title>
+    <link rel="stylesheet" href="iniciosesion.css">
+    <link rel="stylesheet" href="iniciosesionresponsive.css">
+</head>
+<body>
+    <div class="login-container">
+        <a href="index.html"><img src="img LOGO/LOGO-CARGA-TODO-28nov19 (1).png" alt="Logo de la Empresa" class="company-logo"></a>
+        <h2>Identificación - Paso 3</h2>
+        <p>Gracias por registrarte. Ahora necesitamos tu identificación para crear tu casillero.</p>
+
+        <div class="form-group">
+            <label for="idType">Tipo de Identificación</label>
+            <select id="idType" required>
+                <option value="cedula">Cédula de Identidad</option>
+                <option value="residencia">Cédula de Residencia</option>
+                <option value="pasaporte">Pasaporte</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="idNumber">Número de Identificación</label>
+            <input type="text" id="idNumber" required>
+            <span id="error-message" class="error-message" style="color: red; display: none;"></span>
+        </div>
+
+        <a href="#" class="identificar">Identificarse</a>
+    </div>
+    <script>
+        document.querySelector('.identificar').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita que se navegue a la página inmediatamente
+
+    const idType = document.getElementById('idType').value;
+    const idNumber = document.getElementById('idNumber').value.trim();
+    let isValid = false;
+    let message = '';
+    const errorMessageElement = document.getElementById('error-message');
+
+    // Limpiar mensajes anteriores
+    errorMessageElement.textContent = '';
+    errorMessageElement.style.display = 'none';
+
+    // Validar el número de identificación según el tipo seleccionado
+    if (idType === 'cedula') {
+        // Cédula de Identidad: 9 dígitos
+        if (/^\d{9}$/.test(idNumber)) {
+            isValid = true;
+        } else {
+            message = 'La cédula de identidad debe tener 9 dígitos.';
+        }
+    } else if (idType === 'residencia') {
+        // Cédula de Residencia: 11 o 12 dígitos
+        if (/^\d{11,12}$/.test(idNumber)) {
+            isValid = true;
+        } else {
+            message = 'La cédula de residencia debe tener 11 o 12 dígitos.';
+        }
+    } else if (idType === 'pasaporte') {
+        // Pasaporte: 7 a 9 caracteres alfanuméricos
+        if (/^[a-zA-Z0-9]{7,9}$/.test(idNumber)) {
+            isValid = true;
+        } else {
+            message = 'El pasaporte debe tener entre 7 y 9 caracteres alfanuméricos.';
+        }
+    }
+
+    // Mostrar mensaje de error o permitir avanzar
+    if (isValid) {
+        // Redirigir a la siguiente página (cambiar la URL si es necesario)
+        window.location.href = 'confirmacion.html'; // Cambiar a la URL deseada
+    } else {
+        errorMessageElement.textContent = message;
+        errorMessageElement.style.display = 'block'; // Mostrar el mensaje de error
+        document.getElementById('idNumber').focus(); // Poner el foco en el input
+    }
+});
+    </script>
+</body>
+</html>
