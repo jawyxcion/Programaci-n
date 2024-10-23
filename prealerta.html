@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pre-Alerta</title>
+    <link rel="stylesheet" href="prealerta.css">
+    
+</head>
+<body>
+    
+    <div class="form-container">
+        <h2>Formulario de Pre-Alerta</h2>
+        
+            <label for="tracking">Número de Tracking</label>
+            <input type="text" id="tracking" name="tracking" placeholder="Ingresa el número de tracking" required>
+
+            <label for="proveedor">Proveedor o Tienda de Compra</label>
+            <input type="text" id="proveedor" name="proveedor" placeholder="Ingresa el nombre del proveedor o tienda" required>
+
+            <label for="descripcion">Breve Descripción del Producto</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Describe el producto en pocas palabras" required></textarea>
+
+            <label for="valor">Valor Declarado (en dólares)</label>
+            <input type="number" id="valor" name="valor" placeholder="Ej: 100.00" step="0.01" required>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label for="factura">Subir Documento/Foto de Factura</label>
+                <div class="file-upload">
+                    <input type="file" id="factura" name="factura" accept=".jpg, .jpeg, .png, .pdf" required onchange="previewImage(event)">
+                    <p>Arrastra o haz clic para subir el archivo</p>
+                </div>
+                
+                <!-- Vista previa de la imagen -->
+                <img id="preview" alt="Vista previa de la imagen"/>
+    
+
+            <button type="submit">Pre-Alerta</button>
+        </form>
+    </div>
+
+    <script>
+        // Función para mostrar la vista previa de la imagen seleccionada
+        function previewImage(event) {
+            var preview = document.getElementById('preview');
+            var file = event.target.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function() {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+</body>
+</html>

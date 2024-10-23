@@ -1,4 +1,65 @@
 /* Estilos generales para el navbar */
+/* Estilos generales para el navbar */
+
+/* Contenedor principal */
+.containerprincipal {
+    max-width: 1200px; /* Ajusta según el tamaño máximo deseado */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 15px; /* Padding lateral para evitar que el contenido toque los bordes */
+}
+
+/* Ajustes para las cards */
+
+
+/* Estilos para tablets */
+@media (max-width: 768px) {
+    .contact-card {
+        width: 80%; /* Aumenta el ancho en tablets */
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 769px) {
+    .contact-card {
+        width: 30%; /* Ajusta el ancho para pantallas más grandes */
+}
+}
+.servi-container, .cta-buttons, .video-container {
+    padding: 20px; /* Asegura que haya espacio dentro del contenedor */
+    margin: 0 auto; /* Centra el contenedor de cada sección */
+    max-width: 90%; /* Limita el ancho máximo para evitar que se extienda demasiado */
+}
+
+/* Ajustes para textos e imágenes en móviles */
+@media (max-width: 768px) {
+    .servi-image img {
+        width: 80%; /* Ajusta el tamaño de la imagen */
+        max-width: 120px; /* Limitar el tamaño máximo de la imagen */
+    }
+
+    .hero video {
+        width: 100%; /* Asegura que el video no exceda el contenedor */
+        max-width: 400px; /* Limitar el tamaño máximo del video */
+    }
+
+    .cta-button p {
+        font-size: 0.9em; /* Reduce el tamaño de fuente en móviles */
+    }
+
+    /* Ajustar márgenes y paddings en móviles */
+    .servi-container {
+        margin: 0 10px; /* Asegura márgenes apropiados en móviles */
+    }
+
+    .video-container {
+        margin: 0 10px; /* Asegura márgenes apropiados en móviles */
+    }
+
+    .store-logos {
+        margin: 0 10px; /* Espaciado adecuado en móviles */
+}
+}
+
 .navbar {
     background-color: transparent;
     border-radius: 50px;
@@ -16,6 +77,7 @@
     z-index: 1000;
     transition: background-color 0.5s ease;
 }
+
 
 .menu-icon {
     display: none;
@@ -40,18 +102,20 @@
     display: none; /* Oculta el menú */
 }
 
-/* Estilos responsive para pantallas pequeñas */
+/* Ajustes para mejor espacio en pantallas móviles */
+/* Ajustes para mejor espacio en pantallas móviles */
 @media (max-width: 768px) {
     .navbar-items {
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Asegúrate de que este valor coincide con la altura del navbar */
+        top: 60px;
         right: 20px;
         background-color: white;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         display: none; /* Oculta el menú por defecto */
+        z-index: 999; /* Asegúrate de que el menú esté por encima de otros elementos */
     }
 
     .navbar-items.show {
@@ -68,13 +132,23 @@
 
     .navbar-item {
         padding: 10px 15px;
-        text-align: right;
+        text-align: right;
+    }
+
+    /* Elimina interactividad hover en móviles */
+    .navbar-item:hover {
+        transform: none;
+        box-shadow: none;
+        background-color: inherit;
 }
 }
 
 /*VIDEO INICIO*/
 .hero {
     height: 100vh; /* Altura por defecto */
+    padding: 20px; /* Añadir padding para evitar que el contenido toque los bordes */
+    margin: 0 15px; /* Añadir márgenes laterales */
+
 }
 
 .hero video {
@@ -90,12 +164,11 @@
 
 @media (max-width: 480px) {
     .hero {
-        height: 30vh; /* Altura aún menor para teléfonos */
-}
+        height: 30vh; /* Altura aún menor para teléfonos */
+    }
 }
 
 /*boton flotante */
-
 .whatsapp-button {
     width: 60px;
     height: 60px;
@@ -155,7 +228,9 @@
         height: 50px;
         bottom: 15px;
         right: 15px; /* Ajusta la posición del botón */
+        margin: 0 5px; /* Reducir márgenes en móviles */
     }
+
 
     .whatsapp-button::after {
         left: -100px; /* Ajusta la posición de la nubecita */
@@ -169,16 +244,17 @@
         height: 40px;
         bottom: 10px;
         right: 10px; /* Ajusta aún más la posición del botón */
+        margin: 0 5px; /* Reducir márgenes en móviles */
     }
+
 
     .whatsapp-button::after {
         left: -80px; /* Ajusta la posición de la nubecita */
-        font-size: 10px; /* Tamaño de fuente más pequeño en móviles */
-}
+        font-size: 10px; /* Tamaño de fuente más pequeño en móviles */
+    }
 }
 
 /*BOTONES INTERACTIVOS*/
-
 .cta-buttons {
     display: flex;
     align-items: center;
@@ -259,8 +335,8 @@
     }
 
     .cta-button p {
-        font-size: 0.9em; /* Tamaño de fuente más pequeño en móviles */
-}
+        font-size: 0.9em; /* Tamaño de fuente más pequeño en móviles */
+    }
 }
 
 /*SECCION INICIO*/
@@ -269,12 +345,16 @@
     .container {
         flex-direction: column;
         align-items: center;
+        margin: 0 15px;
     }
 
     .video-container {
-        flex: 0 0 100%;
-        margin-right: 0;
-    }
+        padding: 20px; /* Añadir padding */
+    margin: 0 15px; /* Añadir márgenes laterales */
+    display: flex; /* Asegúrate de que sea un contenedor flex */
+    justify-content: center; /* Centrar el contenido */
+}
+
 
     .store-logos {
         margin-top: 20px;
@@ -298,11 +378,12 @@
 @media screen and (max-width: 768px) {
     .store-logos {
         gap: 20px;
+        margin: 0 15px;
     }
 
     .store-logos .logo {
-        flex: 0 1 45%; /* Mantener 2 columnas verticales en teléfonos */
-}
+        flex: 0 1 45%; /* Mantener 2 columnas verticales en teléfonos */
+    }
 }
 
 /*SECCION DE COMO FUNCIONA*/
@@ -310,10 +391,12 @@
 @media screen and (max-width: 1024px) {
     .steps {
         padding: 0 40px; /* Reducir el padding para pantallas más pequeñas */
+        margin: 0 15px;
     }
 
     .step {
         width: calc(50% - 20px); /* Hacer que se acomoden 2 por fila */
+        margin: 0 15px;
     }
 }
 
@@ -321,12 +404,14 @@
 @media screen and (max-width: 768px) {
     .steps {
         padding: 0 20px; /* Más ajuste en padding para teléfonos */
+        margin: 0 15px;
     }
 
     .step {
         width: calc(50% - 20px); /* Mantener 2 por fila en teléfonos también */
-        padding: 10px; /* Reducir el padding interno */
-}
+        padding: 10px; /* Reducir el padding interno */
+        margin: 0 15px;
+    }
 }
 
 /*Seccion de Servicios*/
@@ -342,6 +427,7 @@
     .video-text-container-alt {
         flex-direction: column; /* Cambia la dirección del flex a columna */
         align-items: center; /* Centra el contenido */
+        margin: 0 15px;
     }
 
     .vision-container-alt,
@@ -354,31 +440,33 @@
 /* Asegúrate de que el contenedor de los servicios se mantenga adecuado en móviles */
 @media (max-width: 768px) {
     .servi-container {
+        margin: 0 15px;
         padding: 20px; /* Ajusta el padding para móviles */
     }
 
     .servi {
-        flex-direction: column; /* Cambia la dirección del flex a columna */
-        align-items: flex-start; /* Alinea el contenido a la izquierda */
-    }
+        flex-direction: column; /* Mantener en columna en móviles */
+    align-items: center; /* Centrar elementos */
+    margin-bottom: 20px; /* Espaciado entre cada servicio */
+}
 
     .servi-image img {
-        width: 100%; /* Ajusta la imagen al ancho del contenedor */
+        width: 80%; /* Ajusta la imagen al ancho del contenedor */
         max-width: 150px; /* Limita el tamaño máximo */
     }
 
     .servi-number,
     .servi-number1 {
-        font-size: 48px; /* Ajusta el tamaño de los números en móviles */
+        font-size: 48px; /* Ajusta el tamaño de los números en móviles */
+    }
 }
-}
-
-/*seccion de contacto*/
+/*SECCION DE CONTACTO*/
 
 /* Responsive para tabletas y celulares */
 @media (max-width: 1024px) {
     /* Ajusta la barra de contacto para que sea vertical */
     .contact-bar {
+        margin: 0 20px; /* Añadir margen lateral */
         flex-direction: column; /* Cambia la dirección del flex a columna */
         padding: 20px; /* Reduce el padding para móviles */
         align-items: center; /* Centra los elementos */
@@ -417,18 +505,21 @@
     body {
         font-size: 18px; /* Ajusta el tamaño de fuente para móviles */
     }
-    
+
     .contact-bar {
+        margin: 0 20px; /* Mantener margen en móviles */
         padding: 10px; /* Reduce aún más el padding para móviles */
     }
 
     .contact-info span {
+        padding: 0 10px; /* Añadir espaciado lateral */
+
         font-size: 16px; /* Ajusta el tamaño del texto */
     }
 
     .contact-info a, .contact-email a {
-        font-size: 16px; /* Ajusta el tamaño de los enlaces */
-}
+        font-size: 16px; /* Ajusta el tamaño de los enlaces */
+    }
 }
 
 /*MAPA*/
@@ -436,10 +527,13 @@
 @media (max-width: 1024px) {
     #map {
         height: 300px; /* Ajusta la altura del mapa en tabletas */
-        width: 100%; /* Hace que el mapa ocupe el 100% del ancho */
+        width: calc(100% - 40px); /* Reduce el ancho para mantener el espaciado */
+        margin: 0 auto; /* Centra el mapa */
+    
     }
 
     #search {
+        padding: 10px;
         width: 90%; /* Ajusta el ancho del campo de búsqueda */
         margin: 0 auto; /* Centra el campo de búsqueda */
     }
@@ -448,17 +542,23 @@
 /* Responsive adicional para móviles */
 @media (max-width: 768px) {
     #map {
+         /* Ajusta la altura del mapa en móviles */
+        width: calc(100% - 40px); /* Mantiene el espaciado */
+        margin: 0 auto; /* Centra el mapa */
+
         height: 250px; /* Ajusta la altura del mapa en móviles */
     }
 
     #search {
+        width: calc(90% - 20px); /* Mantiene el espaciado en el campo de búsqueda */
         padding: 8px; /* Reduce el padding para móviles */
         font-size: 14px; /* Ajusta el tamaño de fuente para móviles */
-        border-radius: 20px; /* Ajusta el radio del borde para móviles */
-}
+        border-radius: 20px; /* Ajusta el radio del borde para móviles */
+    }
+
 }
 
-/*SECCION FOOOTER*/
+/*SECCION FOOTER*/
 
 /* Footer responsive */
 @media (max-width: 1024px) {
@@ -466,7 +566,10 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 0 20px; /* Añadir espaciado lateral */
     }
+
+
     .footer-logo,
     .footer-contact,
     .footer-links,
@@ -474,6 +577,7 @@
     .footer-feedback {
         margin: 20px 0;
     }
+
     .footer-logo img,
     .footer-social img,
     .contact-item img {
@@ -485,12 +589,15 @@
     .footer-logo img {
         width: 100px;
     }
+
     .footer-content {
         padding: 20px;
     }
+
     .footer-feedback input, .footer-feedback textarea {
         width: 100%;
     }
+
     .footer-feedback button {
         width: 100%;
     }
@@ -500,14 +607,17 @@
     .footer {
         padding: 50px 20px;
     }
+
     .footer-content {
         padding: 0;
     }
+
     .footer-logo img,
     .footer-social img,
     .contact-item img {
         width: 80px;
     }
+
     .footer-feedback input, .footer-feedback textarea {
         padding: 10px;
 }

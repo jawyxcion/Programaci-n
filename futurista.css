@@ -1,119 +1,324 @@
 body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
-    background-color: #0c0c0c;
-    color: white;
-    overflow-x: hidden;
-  }
-  
-  /* Estilos generales de la barra lateral */
+  margin: 0; /* Elimina los márgenes predeterminados del body */
+  font-family: 'Orbitron', sans-serif; /* Aplica una fuente futurista */
+  background-color: #0c0c0c; /* Establece un color de fondo oscuro */
+  color: white; /* Texto en color blanco */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Estilos generales de la barra lateral */
 .side-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 100%;
-    background-color: #30737b;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Espacia elementos arriba y abajo */
-    align-items: center;
-    transition: width 0.5s ease;
-    padding: 20px 0;
-  }
-  
-  .side-navbar:hover {
-    width: 250px;
-  }
-  
-  /* Logo en la parte superior */
-  .navbar-logo img {
-    width: 100px;
-    transition: width 0.3s ease;
-  }
-  
-  .side-navbar:hover .navbar-logo img {
-    width: 120px; /* Cambia tamaño del logo al hacer hover */
-  }
+  position: fixed; /* Fija la posición en la pantalla */
+  top: 0; /* Ancla al borde superior de la pantalla */
+  left: 0; /* Ancla al borde izquierdo de la pantalla */
+  width: 80px; /* Establece un ancho inicial de 80px */
+  height: 100%; /* Ocupa toda la altura de la pantalla */
+  background-color: #30737b; /* Aplica un fondo color azul grisáceo */
+  display: flex; /* Utiliza flexbox para organizar el contenido */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center; /* Alinea los elementos al centro horizontalmente */
+  transition: width 0.5s ease; /* Suaviza la transición al cambiar el ancho */
+  padding: 20px 0; /* Aplica un relleno vertical de 20px */
+}
 
+.side-navbar:hover {
+  width: 250px; /* Expande el ancho de la barra lateral al hacer hover */
+}
 
-.contact-bar { 
-    background-color: #19393c; /* Aplica un fondo rojo a la barra de contacto. */
-    color: white; /* Establece el color del texto en blanco. */
-    padding: 50px; /* Aplica un relleno de 50 píxeles alrededor de la barra. */
-    display: flex; /* Usa flexbox para organizar los elementos hijos en línea. */
-    justify-content: space-between; /* Coloca los elementos hijos separados con espacio entre ellos. */
-    align-items: center; /* Alinea los elementos verticalmente al centro. */
+.navbar-logo {
+  margin-bottom: 20px; /* Ajusta el margen inferior para mayor separación */
 }
-.contact-info, .contact-email { 
-  margin-right: 200px; /* Aplica un margen derecho de 200 píxeles a ambos elementos. */
-  display: flex; /* Aplica flexbox para organizar los elementos hijos en línea. */
-  align-items: center; /* Centra verticalmente los elementos dentro del contenedor. */
+
+/* Logo en la parte superior */
+.navbar-logo img {
+  width: 80px; /* Establece el ancho del logo inicialmente */
+  transition: width 0.3s ease; /* Suaviza la transición al cambiar el tamaño del logo */
 }
-.contact-info span { 
-  margin-left: 10px; /* Agrega un margen izquierdo de 10 píxeles al span. */
-  font-weight: bold; /* Hace que el texto dentro del span sea en negrita. */
+
+.side-navbar:hover .navbar-logo img {
+  width: 200px; /* Aumenta el tamaño del logo al hacer hover en la barra lateral */
 }
-.contact-info a, .contact-email a { 
-  color: white; /* Establece el color de los enlaces a blanco. */
-  text-decoration: none; /* Elimina el subrayado de los enlaces. */
-  font-size: 18px; /* Define el tamaño del texto de los enlaces a 18 píxeles. */
+
+/* Elementos del menú de la barra lateral */
+.navbar-item {
+  display: flex; /* Flexbox para alinear íconos y texto en línea */
+  align-items: center; /* Alinea los elementos al centro verticalmente */
+  padding: 20px; /* Relleno de 20px para cada ítem del menú */
+  color: #d2d2d2; /* Color gris claro para el texto */
+  cursor: pointer; /* Cambia el cursor a pointer (mano) al pasar por encima */
+  transition: all 0.3s ease; /* Transición suave al hacer hover */
 }
+
+.navbar-item img {
+  width: 50px; /* Ancho de las imágenes de los íconos */
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.navbar-item span {
+  opacity: 0; /* El texto está inicialmente invisible */
+  transition: opacity 0.3s ease; /* Suaviza la transición de visibilidad */
+}
+
+.side-navbar:hover .navbar-item span {
+  opacity: 1; /* Muestra el texto del menú al hacer hover en la barra lateral */
+}
+
+.navbar-item:hover {
+  background-color: rgba(197, 168, 185, 0.2); /* Fondo semitransparente al hacer hover */
+}
+
+/* Barra de contacto */
+.contact-bar {
+  background-color: #19393c; /* Fondo de color azul oscuro */
+  color: white; /* Texto en color blanco */
+  padding: 20px 100px; /* Relleno de 100px alrededor del contenido */
+  display: flex; /* Flexbox para alinear los elementos en fila */
+  justify-content: space-between; /* Separa los elementos con espacio entre ellos */
+  align-items: center; /* Alinea verticalmente los elementos al centro */
+}
+
+.user-info {
+  display: flex; /* Usar flexbox para alinear los elementos en línea */
+  align-items: center; /* Centrar verticalmente los elementos */
+  background-color: #1a7b7b; /* Color de fondo para la sección del usuario */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  transition: transform 0.2s; /* Transición suave para efectos de hover */
+  cursor: pointer; /* Cambiar cursor al pasar sobre la sección */
+}
+
+.user-info:hover {
+  animation: shake 0.5s; /* Añadir animación de sacudida al pasar el mouse */
+}
+
+/* Definir la animación de sacudida */
+@keyframes shake {
+  0% { transform: translate(0); }
+  25% { transform: translate(-5px, 0); }
+  50% { transform: translate(5px, 0); }
+  75% { transform: translate(-5px, 0); }
+  100% { transform: translate(0); }
+}
+
+.user-photo {
+  width: 40px; /* Ajustar el ancho de la imagen */
+  height: 40px; /* Ajustar la altura de la imagen */
+  border-radius: 50%; /* Hacer la imagen redonda */
+  margin-right: 10px; /* Margen a la derecha de la imagen */
+}
+
+.separator {
+  border-left: 1px solid white; /* Línea separadora */
+  height: 40px; /* Altura de la línea separadora */
+  margin: 0 10px; /* Margen a los lados de la línea */
+}
+
+.logout-button {
+  padding: 8px 12px; /* Espaciado interno del botón */
+  background-color: #e74c3c; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.logout-button:hover {
+  background-color: #c0392b; /* Cambiar color al pasar el mouse sobre el botón */
+}
+
+/* Iconos */
 .icon { 
-  width: 60px; /* Define el ancho de los íconos a 60 píxeles. */
-  height: 60px; /* Define la altura de los íconos a 60 píxeles. */
-  margin-right: 10px; /* Agrega un margen derecho de 10 píxeles a los íconos. */
+  width: 60px; /* Ancho de los iconos de 60px */
+  height: 60px; /* Altura de los iconos de 60px */
+  margin-right: 10px; /* Margen derecho de 10px entre los iconos y el texto */
 }
-  
-  /* Elementos del menú */
-  .navbar-item {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    color: #d2d2d2;
-    cursor: pointer;
-    transition: all 0.3s ease;
+
+/* Sección del robot */
+.robot-section {
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  display: flex; /* Flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  background: radial-gradient(circle, #232323, #0c0c0c); /* Fondo con un degradado radial */
+  transition: all 0.5s ease; /* Transición suave para cambios */
+}
+
+/* Texto dentro de la sección del robot */
+.robot-text p {
+  font-size: 1.5em; /* Tamaño de fuente grande para el texto */
+  padding: 20px; /* Relleno de 20px alrededor del texto */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(255, 0, 144, 0.5); /* Sombra con un brillo rosado */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .side-navbar {
+    position: fixed; /* Mantiene el sidebar en una posición fija */
+    bottom: 0; /* Coloca el sidebar en la parte inferior */
+    left: 0; /* Ancla al borde izquierdo */
+    width: 100%; /* Ancho completo en móviles */
+    height: 60px; /* Altura del sidebar en móviles */
+    flex-direction: row; /* Cambia a dirección horizontal */
+    justify-content: space-around; /* Distribuye los elementos uniformemente */
+    padding: 0; /* Sin padding en móviles */
   }
-  
-  .navbar-item img {
-    width: 40px;
-    margin-right: 10px;
+
+  .navbar-logo {
+    display: none; /* Oculta el logo en móviles */
   }
-  
-  .navbar-item span {
-    opacity: 0;
-    transition: opacity 0.3s ease;
+
+  .contact-bar {
+    flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+    padding: 20px; /* Ajusta el padding */
+    align-items: center; /* Centra los elementos */
+    position: relative; /* Permite un mejor posicionamiento en dispositivos móviles */
   }
-  
-  .side-navbar:hover .navbar-item span {
-    opacity: 1;
+
+  .user-info {
+    width: 100%; /* Ocupar el ancho completo */
+    justify-content: space-between; /* Espacia los elementos */
   }
-  
-  .navbar-item:hover {
-    background-color: rgba(197, 168, 185, 0.2);
-  }
-  
-  
-  
-  
-  .content {
-    margin-left: 80px;
-    padding: 50px;
-  }
-  
+
   .robot-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, #232323, #0c0c0c);
-    transition: all 0.5s ease;
+    height: auto; /* Permite que la sección ajuste su altura */
+    padding: 20px; /* Relleno para la sección */
+    display: flex; /* Flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Cambia a dirección columna para móvil */
   }
-  
+
   .robot-text p {
-    font-size: 1.5em;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 0, 144, 0.5);
+    font-size: 1em; /* Tamaño de fuente más pequeño */
+    text-align: center; /* Centrar texto */
   }
+
+  .navbar-item {
+    padding: 10px; /* Reduce el padding para los ítems en móviles */
+  }
+
+  .navbar-item img {
+    width: 30px; /* Reduce el tamaño de los íconos en móviles */
+  }
+
+  .navbar-item span {
+    font-size: 0.8em; /* Reduce el tamaño de fuente en móviles */
+  }
+
+  .logout-button {
+    width: 100%; /* Hace que el botón ocupe todo el ancho */
+    padding: 10px; /* Ajusta el padding */
+  }
+
+  .separator {
+    display: none; /* Oculta el separador en móviles para mayor simplicidad */
+}
+}
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .navbar-item:hover {
+    background-color: transparent; /* Elimina el fondo al hacer hover en dispositivos móviles */
+  }
+
+  .side-navbar {
+    width: 80px; /* Ancho fijo del navbar */
+  }
+
+  .side-navbar:hover {
+    width: 80px; /* Mantiene el mismo ancho en hover */
+  }
+
+  .side-navbar:hover .navbar-item span {
+    opacity: 1; /* Asegura que el texto esté visible sin hover */
+  }
+
+  .navbar-item span {
+    opacity: 1; /* Mantiene el texto visible por defecto en móviles */
+}
+}
+
+
+
+.form-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+h2 {
+  text-align: center;
+  color: #d10e0e;
+}
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+input[type="text"], input[type="number"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.file-upload {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  height: 150px;
+  cursor: pointer;
+  text-align: center;
+  color: #999;
+  position: relative;
+}
+.file-upload input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.file-upload p {
+  margin: 0;
+  pointer-events: none;
+}
+
+#preview {
+  display: none;
+  margin-top: 10px;
+  max-width: 100px;
+  max-height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d10e0e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #8f9817;
+}

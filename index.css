@@ -1,4 +1,6 @@
-body {
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
     font-family: Arial, sans-serif; /* Establece la fuente de todo el cuerpo del documento */
     margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
     padding: 0; /* Elimina el relleno predeterminado del cuerpo */
